@@ -1,0 +1,108 @@
+.user {
+
+    &.open {
+        .user {
+            &-curent::after {
+                transform: rotate(-180deg);
+            }
+
+            &-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 100%);
+            }
+        }
+    }
+
+    &-curent {
+        color: var(--color-gray);
+        font-size: 26px;
+        line-height: 1;
+        font-weight: 300;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 8px;
+
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            background: url('../img/icons/list-icon.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &-menu {
+        position: absolute;
+        right: 64px;
+        bottom: 0;
+        background: var(--color-white);
+        border-radius: 32px;
+        border: 1px solid var(--color-red);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, calc(100% - 50px));
+        transition: transform .3s ease-out, opacity .3s ease-in;
+        z-index: 5;
+    }
+
+    &-item {
+        width: 100%;
+        cursor: pointer;
+        color: var(--color-gray);
+        font-weight: 300;
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto 1fr;
+        grid-gap: 8px 0px;
+
+        &::before {
+            content: '';
+            width: 60px;
+            height: 50px;
+            background: var(--color-white) url('../img/icons/user-icon.svg') no-repeat center left;
+            background-size: 50px 50px;
+            display: inline-block;
+            grid-row-start: span 2;
+            margin-right: 10px;
+        }
+
+        &__curent {
+            background: var(--color-lightbg);
+        }
+
+        &__active {
+            .user-name {
+                font-size: 30px;
+                color: var(--color-black);
+            }
+
+            &::before {
+                width: 63px;
+                height: 73px;
+                background-size: 63px 63px;
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 16px;
+        width: 100%;
+        height: 182px;
+        overflow: auto;
+        @include scrollbar();
+    }
+}

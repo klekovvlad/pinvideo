@@ -1,0 +1,45 @@
+@mixin font($weight) {
+    font-family: Ubuntu, sans-serif;
+    font-weight: $weight;
+}
+
+@mixin tablet() {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin scrollbar() {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-border) var(--color-white);
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--color-white);
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 10px;
+    }
+}
+
+@mixin listIcon() {
+    &::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: url('../img/icons/list-icon.svg') no-repeat center;
+        background-size: contain;
+    }
+}

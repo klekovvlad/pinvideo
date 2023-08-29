@@ -1,0 +1,126 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+
+    .input {
+        &-label {
+            font-weight: 300;
+        }
+
+        &-item {
+            width: 100%;
+
+            input[type=text],
+            input[type=tel],
+            textarea {
+                border-radius: 5px;
+                border: 1px solid var(--color-border);
+                padding: 10px 14px;
+                line-height: 1;
+                width: 100%;
+
+                &::placeholder {
+                    color: var(--color-gray);
+                }
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid var(--color-black);
+                }
+                
+            }
+
+            &-drop {
+                position: relative;
+
+                @include listIcon();
+                &::after {
+                    position: absolute;
+                    bottom: 50%;
+                    right: 12px;
+                    transform: translate(0, 50%);
+                }
+
+                input[type=text] {
+                    padding-right: 30px;
+                }
+    
+                .drop-list {
+                    max-height: 112px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: start;
+                    overflow: auto;
+                    @include scrollbar();
+
+                    &-wrapper {
+                        padding: 8px 8px 8px 16px;
+                        background: #fff;
+                        border-radius: 8px;
+                        border: 1px solid var(--color-border);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transform: translate(0, calc(100% + 4px));
+                        min-width: 100%;
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: 3;
+                    }
+                }
+
+                .drop-item {
+                    width: 100%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: start;
+                    justify-content: start;
+                    gap: 16px;
+                    padding: 8px 0px;
+
+                    &::before {
+                        content: '';
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 4px;
+                        display: inline-block;
+                        border: 1px solid var(--color-gray);
+                    }
+
+                    &:hover {
+                        background: var(--color-lightbg);
+                    }
+
+                    &.active {
+                        &::before {
+                            background: url('../img/icons/check-icon.svg') no-repeat center;
+                            background-size: contain;
+                        }
+                    }
+                }
+
+                &.open {
+                    &::after {
+                        transform: translate(0, 50%) rotate(-180deg);
+                    }
+                    .drop-list-wrapper {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &.input-item-drop:not(.input-item-search) {
+                cursor: pointer;
+                
+                input {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

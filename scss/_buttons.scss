@@ -1,0 +1,28 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font(500);
+    font-size: var(--font-button);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 10px 16px;
+    width: 230px;
+    height: 40px;
+
+    &-dark {
+        background: var(--color-dark);
+    }
+
+    &-blue {
+        background: var(--color-blue);
+    }
+
+    &-light {
+        background: var(--color-light);
+    }
+
+    &-red {
+        background: var(--color-red);
+    }
+}

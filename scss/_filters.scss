@@ -1,0 +1,37 @@
+.filters {
+    &-button {
+        color: var(--color-gray);
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        max-width: max-content;
+
+        @include listIcon();
+    }
+
+    &.open {
+        .filters {
+            &-wrapper {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-wrapper {
+        max-height: 0px;
+        opacity: 0;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px 96px;
+        transition: max-height .3s linear, opacity .2s linear;
+
+        .input-wrapper,
+        .buttons {
+            flex: 0 0 calc((100% - (96px * 2)) / 3);
+        }
+    }
+}

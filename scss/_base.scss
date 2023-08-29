@@ -1,0 +1,19 @@
+html {
+    font-size: var(--font-base);
+    line-height: normal;
+}
+
+body {
+    @include font(400);
+    color: var(--color-black);
+}
+
+main {
+    height: calc(100vh - 91px);
+    max-height: calc(100dvh - 91px);
+
+    &:not(.loginpage) {
+        padding: 16px 64px;
+        background: var(--color-lightbg);
+    }
+}

@@ -1,0 +1,37 @@
+.login {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: auto 48px;
+    background: url('../img/loginpage-bg.png') no-repeat center left;
+    background-size: cover;
+
+    .copyright {
+        max-height: max-content;
+        padding: 9px 64px;
+        font-size: 26px;
+        font-weight: 300;
+        grid-column-start: span 2;
+        color: var(--color-white);
+        background: var(--color-black);
+    }
+
+    &-img {
+        margin: auto;
+    }
+
+    &-form {
+        background: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        padding: 0px 96px;
+        text-align: center;
+
+        .title, .desc {
+            max-width: 300px;
+            margin: 0px auto;
+        }
+    }
+}

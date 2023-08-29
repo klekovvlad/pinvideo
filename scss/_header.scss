@@ -1,0 +1,26 @@
+.header {
+    padding: 25px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 64px;
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 16px;
+        margin-right: auto;
+
+        &-link {
+            font-size: 26px;
+            text-decoration: underline;
+            text-decoration-color: var(--color-redbright);
+            text-decoration-skip-ink: none;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+    }
+}
