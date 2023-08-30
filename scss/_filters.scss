@@ -1,4 +1,6 @@
 .filters {
+    width: 100%;
+    height: auto;
     &-button {
         color: var(--color-gray);
         font-size: 26px;
@@ -15,6 +17,7 @@
         .filters {
             &-wrapper {
                 opacity: 1;
+                visibility: visible;
             }
         }
     }
@@ -22,12 +25,13 @@
     &-wrapper {
         max-height: 0px;
         opacity: 0;
+        visibility: hidden;
         display: flex;
         align-items: start;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 16px 96px;
-        transition: max-height .3s linear, opacity .2s linear;
+        // transition: max-height .3s linear, opacity .2s linear;
 
         .input-wrapper,
         .buttons {

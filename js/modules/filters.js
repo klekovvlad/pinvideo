@@ -1,5 +1,8 @@
+import { Cameras } from "./cameras.js";
+
 export const Fitlers = {
     filter: document.querySelector('.filters'),
+    
 
     init() {
         if(this.filter) {
@@ -16,11 +19,19 @@ export const Fitlers = {
             if(this.filter.classList.contains('open')) {
                 this.filter.classList.remove('open');
                 fitersWrapper.style.paddingTop = '0px';
-                fitersWrapper.style.maxHeight = '0px'
+                fitersWrapper.style.maxHeight = '0px';
+                if(Cameras.grid.classList.contains('cameras-grid')) {
+                    Cameras.grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                    Cameras.cameraHight(2);
+                }
             }else {
                 this.filter.classList.add('open');
                 fitersWrapper.style.paddingTop = '16px';
                 fitersWrapper.style.maxHeight = `${fitersWrapperHeight}px`
+                if(Cameras.grid.classList.contains('cameras-grid')) {
+                    Cameras.grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                    Cameras.cameraHight(2);
+                }
             }
         }
     },

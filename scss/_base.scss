@@ -11,9 +11,22 @@ body {
 main {
     height: calc(100vh - 91px);
     max-height: calc(100dvh - 91px);
+    overflow: hidden;
 
     &:not(.loginpage) {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 16px;
         padding: 16px 64px;
         background: var(--color-lightbg);
+    }
+
+    &.cameraspage {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
     }
 }

@@ -1,0 +1,134 @@
+.cameras {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 16px 8px 16px 32px;
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 32px 32px 0px;
+
+        .title {
+            text-transform: uppercase;
+        }
+
+        .button-blue,
+        .cameras-view-buttons {
+            flex: 0 0 300px;
+        }
+
+        .cameras-view-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 16px;
+
+            button {
+                img {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    &-wrapper {
+        overflow: auto;
+        height: 100%;
+        @include scrollbar();
+        padding: 0px 24px 0px 0px;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+    }
+}
+
+.camera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    border-radius: 20px;
+    background: var(--color-dark);
+    border: 1px solid var(--color-border);
+    position: relative;
+
+    &-info {
+        width: 100%;
+        background: var(--color-lightbg);
+        padding: 22px;
+        text-align: center;
+        position: relative;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    &-name {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    &-status {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+
+    &-open {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        height: 16px;
+        width: 16px;
+        background: url('../img/icons/full-screen-icon.svg') no-repeat center;
+        background-size: contain;
+    }
+
+    &-edit {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 16px;
+        height: 16px;
+        background: url('../img/icons/erid-arrow-icon.svg') no-repeat center;
+        background-size: cover;
+    }
+
+    &[data-status=record] {
+        .camera-status {
+            background: var(--color-green);
+        }
+    }
+    &[data-status=error] {
+        &::after {
+            content: 'Потеряно соединение';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, calc(-50% - 34px));
+            font-size: 20px;
+            color: var(--color-red);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .camera {
+            &-status {
+                background: var(--color-red);
+            }
+
+            &-open {
+                filter: brightness(0) saturate(100%) invert(48%) sepia(78%) saturate(437%) hue-rotate(308deg) brightness(99%) contrast(85%);
+            }
+        }
+    }
+}
