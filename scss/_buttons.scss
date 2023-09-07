@@ -26,3 +26,15 @@
         background: var(--color-red);
     }
 }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    
+    .button {
+        width: calc((100% - 24px) / 2);
+        flex: 1 1 calc((100% - 24px) / 2);
+    }
+}

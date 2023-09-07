@@ -37,5 +37,9 @@
         .buttons {
             flex: 0 0 calc((100% - (96px * 2)) / 3);
         }
+
+        .buttons {
+            margin-top: auto;
+        }
     }
 }

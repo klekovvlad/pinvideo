@@ -1,10 +1,13 @@
+import { Hint } from "./hint.js"
+import { HINT, WORDS, STATUS } from "./resourses.js"
+
 export const Cameras = {
     wrapper: document.querySelector('.cameras-wrapper'),
     viewButtons: document.querySelector('.cameras-view-buttons'),
     grid: document.createElement('div'),
     table: document.createElement('table'),
 
-    getList() {
+    async getList() {
         return CamerasList
     },
 
@@ -19,24 +22,32 @@ export const Cameras = {
         this.wrapper.innerHTML = ''
         this.grid.innerHTML = ''
         this.table.innerHTML = ''
-        if(type === 'grid') {
-            this.grid.classList.add('cameras-grid');
-            this.getList().forEach(item => {
-                this.grid.insertAdjacentHTML('beforeend', this.cameraCard(item))
-            })
-            this.wrapper.append(this.grid);
-        }else if(type === 'table') {
-            this.table.classList.add('cameras-table');
-            this.table.insertAdjacentHTML('beforeend', 
-                this.getTableHead(),
-            )
-            this.getList().forEach(item => {
-                this.table.insertAdjacentHTML('beforeend', this.getTableRow(item))
-            })
-            this.wrapper.append(this.table)
-        }
+        this.getList().then(cameras => {
+            if(type === 'grid') {
+                this.grid.classList.add('cameras-grid');
+                cameras.forEach(item => {
+                    this.grid.insertAdjacentHTML('beforeend', this.cameraCard(item))
+                })
+                this.wrapper.append(this.grid);
+            }else if(type === 'table') {
+                this.table.cellPadding = '0';
+                this.table.cellSpacing = '0'
+                const tableBody = this.getTableBody()
+                this.table.classList.add('cameras-table');
+                this.table.insertAdjacentHTML('beforeend', 
+                    this.getTableHead(),
+                )
+                cameras.forEach(item => {
+                    tableBody.insertAdjacentHTML('beforeend', this.getTableRow(item))
+                })
+    
+                this.table.append(tableBody)
+                this.wrapper.append(this.table)
+            }
+            this.cameraHight(2)
+            Hint.init();
+        })
 
-        this.cameraHight(2)
     },
 
     getHeight() {
@@ -51,12 +62,12 @@ export const Cameras = {
 
     cameraCard(item) {
         return `
-            <div class="camera" data-status="${item.record ? 'record' : 'error'}">
+            <div class="camera" data-status="${item.record ? 'record' : 'error'}" ${!item.record ? `data-message="${STATUS.ERROR}"` : ''}>
                 <div class="camera-status"></div>
-                <a class="camera-open hint" href="#" data-hint="На полный экран"></a>
+                <a class="camera-open" href="#" data-hint="${HINT.SCREEN}"></a>
                 <div class="camera-info">
                     <div class="camera-name">${item.name}</div>
-                    <a href="#" class="camera-edit hint" data-hint="Перейти к редактированию"></a>
+                    <a href="#" class="camera-edit" data-hint="${HINT.EDIT}"></a>
                 </div>
             </div>
         `
@@ -87,11 +98,15 @@ export const Cameras = {
         `
     },
 
+    getTableBody() {
+        return document.createElement('tbody');
+    },
+
     getTableRow(item) {
         return `
-            <tr>
+            <tr class="${item.record ? 'record' : 'error'}">
                 <td>
-                    ${item.name}
+                    <a href="">${item.name}</a>
                 </td>
                 <td>
                     ${item.tags}
@@ -100,16 +115,24 @@ export const Cameras = {
                     ${item.record ? 'Вкл' : 'Выкл'}
                 </td>
                 <td>
-                    ${item.time_archive}
+                    ${item.time_archive} ${this.wordCase(WORDS.HOURS, item.time_archive)}
                 </td>
                 <td>
-                    ${item.depth_archive}
+                    ${item.depth_archive} ${this.wordCase(WORDS.DAYS, item.depth_archive)}
                 </td>
                 <td>
                     ${item.tariff}
                 </td>
             </tr>
         `
+    },
+
+    wordCase(words, num) {
+        if(Array.isArray(words)) {
+            return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+        }else{
+            return ''
+        }
     }
 }
 
@@ -118,7 +141,7 @@ const CamerasList = [
         name: 'Камера 1',
         record: true,
         tags: 'teg1, teg2, teg3, teg4',
-        time_archive: 2,
+        time_archive: 3,
         depth_archive: 2,
         tariff: 'Standart'
     },
@@ -126,7 +149,7 @@ const CamerasList = [
         name: 'Камера 2',
         record: true,
         tags: 'teg1, teg2, teg3, teg4',
-        time_archive: 2,
+        time_archive: 1,
         depth_archive: 2,
         tariff: 'Standart'
     },
@@ -134,7 +157,7 @@ const CamerasList = [
         name: 'Камера 3',
         record: true,
         tags: 'teg1, teg2, teg3, teg4',
-        time_archive: 2,
+        time_archive: 5,
         depth_archive: 2,
         tariff: 'Standart'
     },

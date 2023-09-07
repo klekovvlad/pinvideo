@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -100,6 +99,11 @@ body {
   color: var(--color-black);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 main {
   height: calc(100vh - 91px);
   max-height: calc(100dvh - 91px);
@@ -145,6 +149,8 @@ main.cameraspage {
   grid-gap: 64px;
   position: relative;
   border-bottom: 1px solid var(--color-border);
+  z-index: 10;
+  background: #fff;
 }
 .header-nav {
   display: -webkit-box;
@@ -199,6 +205,25 @@ main.cameraspage {
 }
 .button-red {
   background: var(--color-red);
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+}
+.buttons .button {
+  width: calc((100% - 24px) / 2);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc((100% - 24px) / 2);
+          flex: 1 1 calc((100% - 24px) / 2);
 }
 
 .help {
@@ -580,6 +605,104 @@ main.cameraspage {
       -ms-flex: 0 0 calc((100% - 192px) / 3);
           flex: 0 0 calc((100% - 192px) / 3);
 }
+.filters-wrapper .buttons {
+  margin-top: auto;
+}
+
+.hint {
+  pointer-events: none;
+  position: absolute;
+  padding: 8px 16px;
+  color: var(--color-white);
+  background: var(--color-gray);
+  font-size: 20px;
+  white-space: nowrap;
+  z-index: 5;
+  display: none;
+  -webkit-transform: translate();
+          transform: translate();
+  border-radius: 12px;
+}
+.hint.active {
+  display: block;
+}
+.hint::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--color-gray);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+.popup-body {
+  padding: 32px;
+  max-width: min(728px, 95%);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 32px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0, 50px);
+          transform: translate(0, 50px);
+  -webkit-transition: opacity 0.3s linear, -webkit-transform 0.5s linear;
+  transition: opacity 0.3s linear, -webkit-transform 0.5s linear;
+  transition: opacity 0.3s linear, transform 0.5s linear;
+  transition: opacity 0.3s linear, transform 0.5s linear, -webkit-transform 0.5s linear;
+}
+.popup-body .title,
+.popup-body .buttons,
+.popup-body .input-wrapper {
+  width: 100%;
+}
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup.open .popup-body {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
 
 .login {
   display: grid;
@@ -694,6 +817,62 @@ main.cameraspage {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
 }
+.cameras-table {
+  width: 100%;
+}
+.cameras-table thead tr td {
+  font-size: 20px;
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+.cameras-table thead tr td:first-child {
+  padding: 10px 10px 10px 0px;
+}
+.cameras-table thead tr td:last-child {
+  padding: 10px 0px 10px 10px;
+}
+.cameras-table tbody tr td {
+  padding: 8px 10px;
+}
+.cameras-table tbody tr td:first-child {
+  padding: 8px 10px 8px 0px;
+}
+.cameras-table tbody tr td:last-child {
+  padding: 8px 0px 8px 10px;
+}
+.cameras-table tbody tr td:first-child a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 16px;
+  width: 100%;
+}
+.cameras-table tbody tr td:first-child a::before, .cameras-table tbody tr td:first-child a::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.cameras-table tbody tr td:first-child a::before {
+  border-radius: 50%;
+}
+.cameras-table tbody tr td:first-child a::after {
+  background: url("../img/icons/erid-arrow-icon.svg") no-repeat center;
+  background-size: contain;
+  margin-left: auto;
+}
+.cameras-table tbody tr.record td:first-child a::before {
+  background: var(--color-green);
+}
+.cameras-table tbody tr.error td:first-child a::before {
+  background: var(--color-red);
+}
 
 .camera {
   display: -webkit-box;
@@ -758,7 +937,7 @@ main.cameraspage {
   background: var(--color-green);
 }
 .camera[data-status=error]::after {
-  content: "Потеряно соединение";
+  content: attr(data-message);
   position: absolute;
   left: 50%;
   top: 50%;

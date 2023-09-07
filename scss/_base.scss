@@ -8,6 +8,11 @@ body {
     color: var(--color-black);
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 main {
     height: calc(100vh - 91px);
     max-height: calc(100dvh - 91px);

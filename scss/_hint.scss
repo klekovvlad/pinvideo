@@ -1,13 +1,28 @@
-// .hint {
-//     &::after {
-//         content: attr(data-hint);
-//         position: absolute;
-//         bottom: 0;
-//         padding: 8px 16px;
-//         color: var(--color-white);
-//         background: var(--color-gray);
-//         font-size: 20px;
-//         white-space: nowrap;
-//         z-index: 5;
-//     }
-// }
+.hint {
+    pointer-events: none;
+    position: absolute;
+    padding: 8px 16px;
+    color: var(--color-white);
+    background: var(--color-gray);
+    font-size: 20px;
+    white-space: nowrap;
+    z-index: 5;
+    display: none;
+    transform: translate();
+    border-radius: 12px;
+
+    &.active {
+        display: block;
+    }
+
+    &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: var(--color-gray);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}

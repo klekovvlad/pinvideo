@@ -1,0 +1,47 @@
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(2px);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s linear;
+
+    &-body {
+        padding: 32px;
+        max-width: min(728px, 95%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 32px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 50px);
+        transition: opacity .3s linear, transform .5s linear;
+
+        .title,
+        .buttons,
+        .input-wrapper {
+            width: 100%;
+        }
+    }
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+
+        .popup-body {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, 0);
+        }
+    }
+}
