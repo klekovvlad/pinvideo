@@ -41,6 +41,22 @@
         height: 100%;
         @include scrollbar();
         padding: 0px 24px 0px 0px;
+
+        &[data-filter="5,4,8"],
+        &[data-filter="4,4,8"] {
+            .camera {
+                &-info {
+                    padding: 3px;
+                }
+                &[data-status=error] {
+                    &::after {
+                        text-align: center;
+                        transform: translate(-50%, calc(-50% - 15px));
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
     }
 
     &-grid {

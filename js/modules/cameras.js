@@ -1,3 +1,4 @@
+import { Fitlers } from "./filters.js"
 import { Hint } from "./hint.js"
 import { HINT, WORDS, STATUS } from "./resourses.js"
 
@@ -6,15 +7,27 @@ export const Cameras = {
     viewButtons: document.querySelector('.cameras-view-buttons'),
     grid: document.createElement('div'),
     table: document.createElement('table'),
+    cameras: [],
 
     async getList() {
-        return CamerasList
+        let response = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(CamerasList)
+            }, 3000)
+        })
+
+        return await response;
     },
 
     init() {
         if(this.wrapper) {
-            this.render('grid')
-            this.viewButtonsListener()
+            this.getList().then(list => {
+                this.cameras = list;
+                if(this.cameras.length > 0) {
+                    this.render('grid')
+                    this.viewButtonsListener()
+                }
+            })
         }
     },
 
@@ -22,31 +35,33 @@ export const Cameras = {
         this.wrapper.innerHTML = ''
         this.grid.innerHTML = ''
         this.table.innerHTML = ''
-        this.getList().then(cameras => {
-            if(type === 'grid') {
-                this.grid.classList.add('cameras-grid');
-                cameras.forEach(item => {
-                    this.grid.insertAdjacentHTML('beforeend', this.cameraCard(item))
-                })
-                this.wrapper.append(this.grid);
-            }else if(type === 'table') {
-                this.table.cellPadding = '0';
-                this.table.cellSpacing = '0'
-                const tableBody = this.getTableBody()
-                this.table.classList.add('cameras-table');
-                this.table.insertAdjacentHTML('beforeend', 
-                    this.getTableHead(),
-                )
-                cameras.forEach(item => {
-                    tableBody.insertAdjacentHTML('beforeend', this.getTableRow(item))
-                })
-    
-                this.table.append(tableBody)
-                this.wrapper.append(this.table)
-            }
-            this.cameraHight(2)
-            Hint.init();
-        })
+        if(type === 'grid') {
+            this.grid.classList.add('cameras-grid');
+            this.cameras.forEach(item => {
+                this.grid.insertAdjacentHTML('beforeend', this.cameraCard(item))
+            })
+            this.wrapper.append(this.grid);
+        }else if(type === 'table') {
+            this.table.cellPadding = '0';
+            this.table.cellSpacing = '0'
+            const tableBody = this.getTableBody()
+            this.table.classList.add('cameras-table');
+            this.table.insertAdjacentHTML('beforeend', 
+                this.getTableHead(),
+            )
+            this.cameras.forEach(item => {
+                tableBody.insertAdjacentHTML('beforeend', this.getTableRow(item))
+            })
+
+            this.table.append(tableBody)
+            this.wrapper.append(this.table)
+        }
+        if(!this.wrapper.dataset.filter) {
+            this.cameraHight(2, 16)
+        }else{
+            Fitlers.changeGrid(Cameras.wrapper.dataset.filter.split(','))
+        }
+        Hint.init();
 
     },
 
@@ -54,9 +69,9 @@ export const Cameras = {
         return this.wrapper.offsetHeight;
     },
 
-    cameraHight(rows) {
+    cameraHight(rows, gap) {
         [...this.grid.children].forEach(item => {
-            item.style.height = `${(this.getHeight() / rows) - (16 * (rows - 1))}px`
+            item.style.height = `${(this.getHeight() / rows) - gap}px`
         })
     },
 
@@ -115,28 +130,116 @@ export const Cameras = {
                     ${item.record ? 'Вкл' : 'Выкл'}
                 </td>
                 <td>
-                    ${item.time_archive} ${this.wordCase(WORDS.HOURS, item.time_archive)}
+                    ${item.time_archive} ${WORDS.CASE(WORDS.HOURS, item.time_archive)}
                 </td>
                 <td>
-                    ${item.depth_archive} ${this.wordCase(WORDS.DAYS, item.depth_archive)}
+                    ${item.depth_archive} ${WORDS.CASE(WORDS.DAYS, item.depth_archive)}
                 </td>
                 <td>
                     ${item.tariff}
                 </td>
             </tr>
         `
-    },
-
-    wordCase(words, num) {
-        if(Array.isArray(words)) {
-            return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
-        }else{
-            return ''
-        }
     }
 }
 
 const CamerasList = [
+    {
+        name: 'Камера 1',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 3,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 2',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 1,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 3',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 5,
+        depth_archive: 1,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 4',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 5,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 5',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 20,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 6',
+        record: false,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 1',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 3,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 2',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 1,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 3',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 5,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 4',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 5',
+        record: true,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
+    {
+        name: 'Камера 6',
+        record: false,
+        tags: 'teg1, teg2, teg3, teg4',
+        time_archive: 2,
+        depth_archive: 2,
+        tariff: 'Standart'
+    },
     {
         name: 'Камера 1',
         record: true,

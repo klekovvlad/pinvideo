@@ -812,6 +812,15 @@ main.cameraspage {
   background: var(--color-border);
   border-radius: 10px;
 }
+.cameras-wrapper[data-filter="5,4,8"] .camera-info, .cameras-wrapper[data-filter="4,4,8"] .camera-info {
+  padding: 3px;
+}
+.cameras-wrapper[data-filter="5,4,8"] .camera[data-status=error]::after, .cameras-wrapper[data-filter="4,4,8"] .camera[data-status=error]::after {
+  text-align: center;
+  -webkit-transform: translate(-50%, calc(-50% - 15px));
+          transform: translate(-50%, calc(-50% - 15px));
+  white-space: pre-wrap;
+}
 .cameras-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

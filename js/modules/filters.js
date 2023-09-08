@@ -1,4 +1,5 @@
 import { Cameras } from "./cameras.js";
+import { SETTINGS } from "./resourses.js";
 
 export const Fitlers = {
     filter: document.querySelector('.filters'),
@@ -7,7 +8,22 @@ export const Fitlers = {
     init() {
         if(this.filter) {
             this.open()
+            this.renderTableList();
             inputDrop.init()
+        }
+    },
+
+    renderTableList() {
+        try{
+            for(let key in SETTINGS.TABLES) {
+                const el = document.createElement('li');
+                el.classList.add('drop-item');
+                el.textContent = key;
+                this.filter.querySelector('.filters-table .drop-list').append(el)
+            }
+        }
+        catch{
+            console.log('Ошибка фильтра')
         }
     },
     
@@ -20,19 +36,31 @@ export const Fitlers = {
                 this.filter.classList.remove('open');
                 fitersWrapper.style.paddingTop = '0px';
                 fitersWrapper.style.maxHeight = '0px';
-                if(Cameras.grid.classList.contains('cameras-grid')) {
-                    Cameras.grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                    Cameras.cameraHight(2);
+                inputDrop.removeAllClass();
+                if(!Cameras.wrapper.dataset.filter) {
+                    this.changeGrid([2, 2, 16])
+                }else{
+                    this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
                 }
             }else {
                 this.filter.classList.add('open');
                 fitersWrapper.style.paddingTop = '16px';
                 fitersWrapper.style.maxHeight = `${fitersWrapperHeight}px`
-                if(Cameras.grid.classList.contains('cameras-grid')) {
-                    Cameras.grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-                    Cameras.cameraHight(2);
+                if(!Cameras.wrapper.dataset.filter) {
+                    this.changeGrid([3, 2, 16])
+                }else{
+                    console.log(Cameras.wrapper.dataset.filter.split(','))
+                    this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
                 }
             }
+        }
+    },
+
+    changeGrid(array) {
+        if(Cameras.grid.classList.contains('cameras-grid')) {
+            Cameras.grid.style.gridTemplateColumns = `repeat(${array[0]}, 1fr)`;
+            Cameras.grid.style.gap = `${array[2]}px`
+            Cameras.cameraHight(array[1], array[2]);
         }
     },
 
@@ -67,19 +95,25 @@ const inputDrop = {
             if(list) {
                 const listItems = list.querySelectorAll('.drop-item');
 
-                let listArray = [];
-                for(let i = 0; i < listItems.length; i++) {
-                    listArray.push(listItems[i].textContent);
-                }
-
-                list.onclick = (e) => {
-                    this.inputValue(inputText, listItems, listArray, this.listListener(e));
+                if(input.classList.contains('input-item-options')) {
+                    let listArray = [];
+                    for(let i = 0; i < listItems.length; i++) {
+                        listArray.push(listItems[i].textContent);
+                    }
+    
+                    list.onclick = (e) => {
+                        this.inputValue(inputText, listItems, listArray, this.listListener(e));
+                    }
+                }else {
+                    list.onclick = (e) => {
+                        this.inputRadio(inputText, listItems, this.listListener(e))
+                    }
                 }
 
                 if(input.classList.contains('input-item-search')) {
-                    inputText.oninput = (e) => {
+                    inputText.addEventListener('input', (e) => {
                         this.inputSearch(e.target, listItems)
-                    }
+                    })
                 }
             }
         })
@@ -142,5 +176,22 @@ const inputDrop = {
                 item.style.display = 'none'
             }
         })
-    }
+    },
+
+    inputRadio(input, array, obj) {
+        for(let i = 0; i < array.length; i++) {
+            if(array[i].textContent !== obj.data) {
+                array[i].classList.remove('active')
+            }
+        }
+        if(obj.remove) {
+            input.value = ''
+        }else{
+            input.value = obj.data
+        }
+        if(input.parentElement.classList.contains('filters-table')) {
+            Fitlers.changeGrid(SETTINGS.TABLES[obj.data])
+            Cameras.wrapper.dataset.filter = SETTINGS.TABLES[obj.data];
+        }
+    }   
 }
