@@ -140,9 +140,14 @@
     label {
         cursor: pointer;
         display: flex;
-        align-items: start;
+        align-items: center;
         justify-content: start;
         gap: 16px;
+        text-align: left;
+
+        @include mobile {
+            gap: 8px;
+        }
 
         &::before {
             content: '';
@@ -170,6 +175,11 @@
     gap: 16px;
     width: 100%;
 
+    @include mobile {
+        align-items: start;
+        justify-content: space-between;
+    }
+
     .input-check {
         flex: 0 0 55%;
     }
@@ -187,6 +197,11 @@
         align-items: center;
         justify-content: start;
         gap: 16px;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 4px;
+        }
     }
 
     &-text {
@@ -203,6 +218,7 @@
         border: 1px solid var(--color-border);
         padding: 10px 14px;
         line-height: 1;
+        
 
         &::placeholder {
             color: var(--color-gray);

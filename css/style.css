@@ -301,6 +301,28 @@ main.tariffpage {
   font-weight: 300;
 }
 
+.for-payment {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--color-black);
+}
+@media (max-width: 767px) {
+  .for-payment {
+    font-size: 18px;
+  }
+}
+
+.balance {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--color-blue);
+}
+@media (max-width: 767px) {
+  .balance {
+    font-size: 18px;
+  }
+}
+
 .input-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -482,13 +504,19 @@ main.tariffpage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
   gap: 16px;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .input-check label {
+    gap: 8px;
+  }
 }
 .input-check label::before {
   content: "";
@@ -517,6 +545,16 @@ main.tariffpage {
   gap: 16px;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .input-row {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .input-row .input-check {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 55%;
@@ -542,6 +580,15 @@ main.tariffpage {
       -ms-flex-pack: start;
           justify-content: start;
   gap: 16px;
+}
+@media (max-width: 767px) {
+  .input-number-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 4px;
+  }
 }
 .input-number-text {
   color: var(--color-gray);
@@ -894,9 +941,9 @@ main.tariffpage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -904,10 +951,18 @@ main.tariffpage {
   visibility: hidden;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
+  overflow: auto;
+  padding: 95px 0px 10px 0px;
+}
+@media (max-width: 767px) {
+  .popup {
+    padding: 45px 0px 10px 0px;
+  }
 }
 .popup-body {
   padding: 32px;
   max-width: min(728px, 95%);
+  min-width: min(458px, 95%);
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -932,10 +987,20 @@ main.tariffpage {
   transition: opacity 0.3s linear, transform 0.5s linear;
   transition: opacity 0.3s linear, transform 0.5s linear, -webkit-transform 0.5s linear;
 }
+@media (max-width: 767px) {
+  .popup-body {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+}
 .popup-body .title,
 .popup-body .buttons,
+.popup-body .desc,
 .popup-body .input-wrapper {
   width: 100%;
+}
+.popup-body .button {
+  margin: 0px auto;
 }
 .popup.open {
   opacity: 1;
@@ -1310,6 +1375,12 @@ main.tariffpage {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 32px;
 }
+@media (max-width: 767px) {
+  .tariff-list {
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+  }
+}
 .tariff-item input[type=radio] {
   display: none;
 }
@@ -1449,9 +1520,29 @@ main.tariffpage {
           justify-content: space-between;
   gap: 190px;
 }
+@media (max-width: 767px) {
+  .tariff-bottom {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 12px;
+  }
+}
 .tariff-bottom .button {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 230px;
           flex: 0 0 230px;
   width: 230px;
+}
+@media (max-width: 767px) {
+  .tariff-bottom .button {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40px;
+            flex: 0 0 40px;
+    margin: 0px auto;
+  }
 }/*# sourceMappingURL=style.css.map */

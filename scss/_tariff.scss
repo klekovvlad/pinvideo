@@ -3,6 +3,11 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 32px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            grid-gap: 12px;
+        }
     }
 
     &-item {
@@ -120,9 +125,20 @@
         justify-content: space-between;
         gap: 190px;
 
+        @include mobile {
+            justify-content: start;
+            flex-direction: column-reverse;
+            gap: 12px;
+        }
+
         .button {
             flex: 0 0 230px;
             width: 230px;
+
+            @include mobile {
+                flex: 0 0 40px;
+                margin: 0px auto;
+            }
         }
     }
 }

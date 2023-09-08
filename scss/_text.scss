@@ -10,3 +10,23 @@
 .desc {
     font-weight: 300;
 }
+
+.for-payment {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-black);
+
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+.balance {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-blue);
+
+    @include mobile {
+        font-size: 18px;
+    }
+}

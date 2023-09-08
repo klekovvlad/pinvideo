@@ -7,15 +7,22 @@
     backdrop-filter: blur(2px);
     z-index: 9;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity .2s linear;
+    overflow: auto;
+    padding: 95px 0px 10px 0px;
+
+    @include mobile {
+        padding: 45px 0px 10px 0px;
+    }
 
     &-body {
         padding: 32px;
         max-width: min(728px, 95%);
+        min-width: min(458px, 95%);
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -27,10 +34,20 @@
         transform: translate(0, 50px);
         transition: opacity .3s linear, transform .5s linear;
 
+        @include mobile {
+            padding: 24px 16px;
+            gap: 16px;
+        }
+
         .title,
         .buttons,
+        .desc,
         .input-wrapper {
             width: 100%;
+        }
+
+        .button {
+            margin: 0px auto;
         }
     }
 

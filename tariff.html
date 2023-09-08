@@ -210,10 +210,47 @@
                 </div>
             </div>
 
-            <div class="buttons buttons-column">
-                <button class="button button-dark">Списать с баланса</button>
-                <button class="button button-blue">Пополнить баланс</button>
+            <div class="for-payment">
+                Итого к оплате: <span class="value">169,00 руб.</span>
             </div>
+
+            <div class="balance">
+                Баланс <span class="value">2250,00 руб.</span>
+            </div>
+
+            <div class="buttons buttons-column">
+                <button data-popup="success" class="button button-dark">Списать с баланса</button>
+                <button data-popup="balance" class="button button-blue">Пополнить баланс</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="balance">
+        <div class="popup-body box">
+            <div class="title">Пополнение баланса</div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Введите сумму для пополнения:</div>
+                <div class="input-item">
+                    <input type="text" placeholder="1000">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-blue">Перейти к оплате</button>
+                <button class="button button-light popup-close">Отменить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="success">
+        <div class="popup-body box">
+            <div class="title">Тариф успешно оплачен</div>
+
+            <div class="desc">Перейти к редактированию камеры</div>
+
+            <a href="#" class="button button-dark">Перейти</a>
+            
         </div>
     </div>
 
