@@ -1,0 +1,41 @@
+.camerapage {
+    grid-template-rows: auto 100%;
+    &-wrapper {
+        padding: 32px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 64px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            padding: 24px 12px;
+            grid-gap: 16px;
+        }
+
+        .title {
+            grid-column-start: span 2;
+            text-align: center;
+
+            @include mobile {
+                grid-column-start: 1;
+            }
+        }
+
+        .camera {
+            aspect-ratio: 8 / 5;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 16px;
+
+        .button {
+            margin-top: auto;
+        }
+    }
+}

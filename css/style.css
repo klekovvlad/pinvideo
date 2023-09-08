@@ -1315,9 +1315,19 @@ main.tariffpage {
   position: relative;
   border-radius: 0px 0px 20px 20px;
 }
+@media (max-width: 767px) {
+  .camera-info {
+    padding: 10px;
+  }
+}
 .camera-name {
   font-size: 20px;
   font-weight: 400;
+}
+@media (max-width: 767px) {
+  .camera-name {
+    font-size: 14px;
+  }
 }
 .camera-status {
   position: absolute;
@@ -1545,4 +1555,53 @@ main.tariffpage {
             flex: 0 0 40px;
     margin: 0px auto;
   }
+}
+
+.camerapage {
+  grid-template-rows: auto 100%;
+}
+.camerapage-wrapper {
+  padding: 32px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 64px;
+}
+@media (max-width: 767px) {
+  .camerapage-wrapper {
+    grid-template-columns: 1fr;
+    padding: 24px 12px;
+    grid-gap: 16px;
+  }
+}
+.camerapage-wrapper .title {
+  grid-column-start: span 2;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .camerapage-wrapper .title {
+    grid-column-start: 1;
+  }
+}
+.camerapage-wrapper .camera {
+  aspect-ratio: 8/5;
+}
+.camerapage-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 16px;
+}
+.camerapage-info .button {
+  margin-top: auto;
 }/*# sourceMappingURL=style.css.map */

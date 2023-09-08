@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Страница c камерой</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="videos.html" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>
+
+    <main class="camerapage">
+        <div class="camerapage-wrapper box">
+            <div class="title">Камера 1</div>
+
+            <div class="camera" data-status="record">
+                <div class="camera-status"></div>
+                <a class="camera-open" href="#" data-hint="На полный экран"></a>
+                <div class="camera-info">
+                    <div class="camera-name">Камера 1</div>
+                    <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                </div>
+            </div>
+
+            <div class="camerapage-info">
+                <div class="desc">Название: Камера 1</div>
+                <div class="desc">Статус: running</div>
+                <div class="desc">Теги: teg1 teg2 teg3 teg4</div>
+                <div class="desc">Запись архива: Включена, 2 часа</div>
+                <div class="desc">Глубина архива: 1 день</div>
+                <div class="desc">Тариф: Standard</div>
+                <a href="#" class="button button-blue">Редактировать</a>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
