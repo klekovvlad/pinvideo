@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Изменить тариф</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="videos.html" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>   
+    
+    <main class="tariffpage">
+        <ul class="tariff-list">
+            <li class="tariff-item">
+                <input type="radio" name="tariff" id="tariff-1" value="Standard">
+                <label class="box" for="tariff-1">
+                    <div class="tariff-item-title">
+                        <div class="title">Free</div>
+                    </div>
+                    <div class="tariff-item-term">
+                        <div class="tariff-item-price">Бесплатно</div>
+                        <div class="tariff-item-desc">до 5 камер на аккаунт</div>
+                    </div>
+                    <ol class="tariff-item-list">
+                        <li>Битрейт до 1 мегабита/сек</li>
+                        <li>Запись 12 часов на каждую</li>
+                        <li>Возможность смотреть в одном окне записи с нескольких камер</li>
+                        <li>Экспорт неограниченного числа клипов</li>
+                    </ol>
+                </label>
+            </li>
+
+            <li class="tariff-item">
+                <input type="radio" name="tariff" id="tariff-2" value="Standard">
+                <label class="box" for="tariff-2">
+                    <div class="tariff-item-title">
+                        <div class="title">Standard</div>
+                    </div>
+                    <div class="tariff-item-term">
+                        <div class="tariff-item-price">149₽</div>
+                        <div class="tariff-item-desc">(99₽ при оплате за 3 месяца) за каждую камеру в тарифе</div>
+                    </div>
+                    <ol class="tariff-item-list">
+                        <li>Битрейт 1 мегабит/сек</li>
+                        <li>Архив 1 день (+20₽/мес. за каждый добавленный день архива, на всех камерах в тарифе)</li>
+                        <li>Публичная трансляция (возможность делиться камерами с помощью ссылки на просмотр)</li>
+                        <li>Паблик ссылка (вставка на сайт)</li>
+                        <li>Возможность смотреть в одном окне записи с нескольких камер</li>
+                        <li>Экспорт неограниченного числа клипов</li>
+                    </ol>
+                </label>
+            </li>
+
+            <li class="tariff-item">
+                <input type="radio" name="tariff" id="tariff-3" value="Standard">
+                <label class="box" for="tariff-3">
+                    <div class="tariff-item-title">
+                        <div class="title">Premium</div>
+                    </div>
+                    <div class="tariff-item-term">
+                        <div class="tariff-item-price">199₽</div>
+                        <div class="tariff-item-desc">(149₽ при оплате за 3 месяца) за каждую камеру в тарифе</div>
+                    </div>
+                    <ol class="tariff-item-list">
+                        <li>Битрейт 2 мегабита/сек</li>
+                        <li>Архив 3 дня (+25₽/мес. за каждый добавленный день архива, на всех камерах)</li>
+                        <li>Публичная трансляция (возможность делиться камерами с помощью ссылки на просмотр)</li>
+                        <li>Паблик ссылка (вставка на сайт)</li>
+                        <li>Запись аудиопотока</li>
+                        <li>Возможность смотреть в одном окне записи с нескольких камер</li>
+                        <li>Экспорт неограниченного числа клипов</li>
+                        <li>*возможность увеличить битрейт на тарифе</li>
+                    </ol>
+                </label>
+            </li>
+
+            <li class="tariff-item">
+                <input type="radio" name="tariff" id="tariff-4" value="Standard">
+                <label class="box" for="tariff-4">
+                    <div class="tariff-item-title">
+                        <div class="title">Professional</div>
+                    </div>
+                    <div class="tariff-item-term">
+                        <div class="tariff-item-price">299₽</div>
+                        <div class="tariff-item-desc">(249₽ при оплате за 3 месяца) за каждую камеру в тарифе</div>
+                    </div>
+                    <ol class="tariff-item-list">
+                        <li>Битрейт до 4 мегабит/сек</li>
+                        <li>3 дня архив (+49₽/мес. за каждый добавленный день архива, на всех камерах)</li>
+                        <li>Публичная трансляция (возможность делиться камерами с помощью ссылки на просмотр)</li>
+                        <li>Паблик ссылка (вставка на сайт)</li>
+                        <li>Запись аудиопотока</li>
+                        <li>Возможность смотреть в одном окне записи с нескольких камер</li>
+                        <li>Экспорт неограниченного числа клипов</li>
+                        <li>*возможность увеличить битрейт на тарифе</li>
+                    </ol>
+                </label>
+            </li>
+        </ul>
+
+        <div class="tariff-bottom">
+            <div class="tariff-term">
+                <p class="desc">Количество тарифов на аккаунт не ограничено.</p>
+                <p class="desc">Все тарифы предоставляют возможность работы по api.</p>
+                <p class="desc">* дополнительно 4 мегабита/сек. + 100₽/мес. за каждый день записи на аккаунте (включая дни что входят в тариф) для каждой отдельной камеры. Можно добавлять неограниченное количество раз, увеличивая битрейт до необходимого.</p>
+            </div>
+
+            <button data-popup="tariff_payment" class="button button-dark">Перейти к оформлению</button>
+        </div>
+    </main>
+
+    <div class="popup" id="tariff_payment">
+        <div class="popup-body box">
+            <div class="title">Изменение тарифа</div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Тариф:</div>
+                <div class="input-item input-item-drop">
+                    <input type="text" placeholder="Все">
+                    <div class="drop-list-wrapper">
+                        <ul class="drop-list">
+                            <li class="drop-item">Standard</li>
+                            <li class="drop-item">Premium</li>
+                            <li class="drop-item">Professional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-check">
+                <input type="checkbox" name="prepayment" value="" id="prepayment">
+                <label for="prepayment">Оплатить вперед 3 месяца с выгодой 33%</label>
+            </div>
+
+            <div class="input-row">
+                <div class="input-check">
+                    <input type="checkbox" name="depth" value="" id="depth">
+                    <label for="depth">Глубина архива:</label>
+                </div>
+                <div class="input-number-wrapper">
+                    <div class="input-number">
+                        <input data-pre="+" name="date" type="text" value="+1">
+                        <button class="input-number-button input-number-prev"></button>
+                        <button class="input-number-button input-number-next"></button>
+                    </div>
+                    <div class="input-number-text" data-type="days">день</div>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-check">
+                    <input type="checkbox" name="speed" value="" id="speed">
+                    <label for="speed">Скорость передачи:</label>
+                </div>
+                <div class="input-number-wrapper">
+                    <div class="input-number">
+                        <input data-pre="+" type="text" name="speed" value="+4">
+                        <button class="input-number-button input-number-prev"></button>
+                        <button class="input-number-button input-number-next"></button>
+                    </div>
+                    <div class="input-number-text" data-type="speed">Мбит/с</div>
+                </div>
+            </div>
+
+            <div class="buttons buttons-column">
+                <button class="button button-dark">Списать с баланса</button>
+                <button class="button button-blue">Пополнить баланс</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

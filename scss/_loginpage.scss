@@ -5,6 +5,11 @@
     background: url('../img/loginpage-bg.png') no-repeat center left;
     background-size: cover;
 
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 32px;
+    }
+
     .copyright {
         max-height: max-content;
         padding: 9px 64px;
@@ -13,10 +18,20 @@
         grid-column-start: span 2;
         color: var(--color-white);
         background: var(--color-black);
+
+        @include mobile {
+            grid-column-start: 1;
+            font-size: 16px;
+            padding: 8px 24px;
+        }
     }
 
     &-img {
         margin: auto;
+
+        @include mobile {
+            max-width: 210px;
+        }
     }
 
     &-form {
@@ -28,6 +43,11 @@
         gap: 32px;
         padding: 0px 96px;
         text-align: center;
+
+        @include mobile {
+            gap: 16px;
+            padding: 0px 32px;
+        }
 
         .title, .desc {
             max-width: 300px;

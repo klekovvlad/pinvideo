@@ -25,6 +25,10 @@
         justify-content: start;
         gap: 8px;
 
+        @include mobile {
+            font-size: 14px;
+        }
+
         &::after {
             content: '';
             width: 16px;
@@ -53,6 +57,12 @@
         transform: translate(0, calc(100% - 50px));
         transition: transform .3s ease-out, opacity .3s ease-in;
         z-index: 5;
+
+        @include mobile {
+            right: 24px;
+            padding: 24px;
+
+        }
     }
 
     &-item {
@@ -65,6 +75,10 @@
         grid-template-columns: auto 1fr;
         grid-gap: 8px 0px;
 
+        @include mobile {
+            font-size: 14px;
+        }
+
         &::before {
             content: '';
             width: 60px;
@@ -74,6 +88,12 @@
             display: inline-block;
             grid-row-start: span 2;
             margin-right: 10px;
+
+            @include mobile {
+                width: 40px;
+                height: 40px;
+                background-size: 40px 40px;
+            }
         }
 
         &__curent {
@@ -84,12 +104,22 @@
             .user-name {
                 font-size: 30px;
                 color: var(--color-black);
+
+                @include mobile {
+                    font-size: 18px;
+                }
             }
 
             &::before {
                 width: 63px;
                 height: 73px;
                 background-size: 63px 63px;
+
+                @include mobile {
+                    width: 50px;
+                    height: 50px;
+                    background-size: 50px 50px;
+                }
             }
         }
     }

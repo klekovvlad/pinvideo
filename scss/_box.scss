@@ -3,4 +3,8 @@
     border-radius: 32px;
     border: 1px solid var(--color-red);
     padding: 16px 32px;
+
+    @include mobile {
+        padding: 16px 24px;
+    }
 }

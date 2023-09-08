@@ -11,6 +11,10 @@
         max-width: max-content;
 
         @include listIcon();
+
+        @include mobile {
+            font-size: 18px;
+        }
     }
 
     &.open {
@@ -31,11 +35,17 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 16px 96px;
-        // transition: max-height .3s linear, opacity .2s linear;
+        @include mobile {
+            gap: 8px;
+        }
 
         .input-wrapper,
         .buttons {
             flex: 0 0 calc((100% - (96px * 2)) / 3);
+
+            @include mobile {
+                flex: 0 0 100%;
+            }
         }
 
         .buttons {

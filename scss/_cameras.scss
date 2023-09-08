@@ -13,8 +13,19 @@
         justify-content: space-between;
         padding: 0px 32px 32px 0px;
 
+        @include mobile {
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
         .title {
             text-transform: uppercase;
+
+            @include mobile {
+                order: -1;
+                flex: 0 0 100%;
+                text-align: center;
+            }
         }
 
         .button-blue,
@@ -22,11 +33,21 @@
             flex: 0 0 300px;
         }
 
+        @include mobile {
+            .button-blue {
+                flex: 0 0 60%;
+            }
+        }
+
         .cameras-view-buttons {
             display: flex;
             align-items: center;
             justify-content: end;
             gap: 16px;
+
+            @include mobile {
+                flex: 0 0 calc(40% - 16px);
+            }
 
             button {
                 img {

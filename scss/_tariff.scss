@@ -1,0 +1,128 @@
+.tariff {
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+    }
+
+    &-item {
+        input[type=radio] {
+            display: none;
+        }
+
+        input[type=radio]:checked ~ label {
+            &::before {
+                background: var(--color-light);
+            }
+
+            &::after {
+                background-image: url('../img/icons/check-icon.svg');
+            }
+        }
+
+        label {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            gap: 32px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 72px;
+                background: var(--color-lightbg);
+            }
+
+            &::after {
+                content: '';
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                border: 1px solid var(--color-border);
+                border-radius: 4px;
+                margin-top: auto;
+            }
+        }
+
+        &-title {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        &-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 16px;
+
+            li {
+                width: 100%;
+                list-style: decimal;
+                list-style-position: inside;
+            }
+        }
+
+        &-term {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 16px;
+            color: var(--color-blue);
+        }
+
+        &-price {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        &-desc {
+            font-weight: 16;
+            font-weight: 300;
+            min-height: 40px;
+        }
+    }
+
+    &-term {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 8px;
+
+        p.desc {
+            font-size: 16px;
+            color: var(--color-black);
+        }
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 190px;
+
+        .button {
+            flex: 0 0 230px;
+            width: 230px;
+        }
+    }
+}

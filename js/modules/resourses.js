@@ -1,6 +1,7 @@
 export const WORDS = {
     HOURS: ['час', 'часа', 'часов'],
     DAYS: ['день', 'дня', 'дней'],
+    SPEED: 'Мбит/с',
 
     CASE(words, num) {
         if(Array.isArray(words)) {

@@ -4,4 +4,9 @@
     background: url('../img/icons/help-icon.svg') no-repeat center;
     background-size: contain;
     display: inline-block;
+
+    @include mobile {
+        width: 16px;
+        height: 16px;
+    }
 }

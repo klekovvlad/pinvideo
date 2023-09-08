@@ -13,7 +13,7 @@ export const Cameras = {
         let response = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(CamerasList)
-            }, 3000)
+            }, 1000)
         })
 
         return await response;

@@ -9,12 +9,21 @@
     z-index: 10;
     background: #fff;
 
+    @include mobile {
+        padding: 6px 24px;
+        grid-gap: 16px;
+    }
+
     &-nav {
         display: flex;
         align-items: center;
         justify-content: start;
         gap: 16px;
         margin-right: auto;
+
+        @include mobile {
+            gap: 8px;
+        }
 
         &-link {
             font-size: 26px;
@@ -23,6 +32,11 @@
             text-decoration-skip-ink: none;
             text-decoration-thickness: 2px;
             text-underline-offset: 4px;
+
+            @include mobile {
+                font-size: 14px;
+                text-underline-offset: 2px;
+            }
         }
     }
 }

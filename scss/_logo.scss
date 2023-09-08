@@ -1,0 +1,14 @@
+.logo {
+    width: 150px;
+    height: 50px;
+    background-image: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+
+    @include mobile {
+        width: 30px;
+        height: 30px;
+        background-image: url('../img/logo-mob.svg');
+    }
+}

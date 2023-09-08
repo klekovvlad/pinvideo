@@ -8,6 +8,12 @@
     .input {
         &-label {
             font-weight: 300;
+
+            @include mobile {
+                overflow-wrap: break-word;
+                word-break: break-all;
+                white-space: pre-wrap;
+            }
         }
 
         &-item {
@@ -122,5 +128,107 @@
                 }
             }
         }
+    }
+}
+
+.input-check {
+    input[type=checkbox],
+    input[type=radio] {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 16px;
+
+        &::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            display: inline-block;
+        }
+    }
+
+    input[type=checkbox]:checked ~ label,
+    input[type=radio]:checked ~ label {
+        &::before {
+            background: url('../img/icons/check-icon.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+    width: 100%;
+
+    .input-check {
+        flex: 0 0 55%;
+    }
+
+    &:nth-child(2) {
+        flex-grow: 1;
+    }
+}
+
+.input-number {
+    position: relative;
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 16px;
+    }
+
+    &-text {
+        color: var(--color-gray);
+        white-space: nowrap;
+    }
+
+    input {
+        pointer-events: none;
+        color: var(--color-gray);
+        text-align: center;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid var(--color-border);
+        padding: 10px 14px;
+        line-height: 1;
+
+        &::placeholder {
+            color: var(--color-gray);
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid var(--color-black);
+        }
+    }
+
+    &-button {
+        position: absolute;
+        top: 50%;
+        background: url('../img/icons/list-icon.svg') no-repeat center;
+        width: 16px;
+        height: 16px;
+    }
+
+    &-prev {
+        left: 8px;
+        transform: translate(0, -50%) rotate(90deg);
+    }
+
+    &-next {
+        right: 8px;
+        transform: translate(0, -50%) rotate(-90deg);
     }
 }

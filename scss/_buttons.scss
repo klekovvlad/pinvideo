@@ -32,9 +32,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+
+    &-column {
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+    }
     
-    .button {
-        width: calc((100% - 24px) / 2);
-        flex: 1 1 calc((100% - 24px) / 2);
+    &:not(.buttons-column) {
+        .button {
+            width: calc((100% - 24px) / 2);
+            flex: 1 1 calc((100% - 24px) / 2);
+        }
     }
 }

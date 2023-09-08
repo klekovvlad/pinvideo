@@ -9,7 +9,6 @@ export const Fitlers = {
         if(this.filter) {
             this.open()
             this.renderTableList();
-            inputDrop.init()
         }
     },
 
@@ -31,12 +30,12 @@ export const Fitlers = {
         const button = this.filter.querySelector('.filters-button');
         const fitersWrapper = this.filter.querySelector('.filters-wrapper');
         const fitersWrapperHeight = fitersWrapper.scrollHeight;
-        button.onclick = () => {
+        button.onclick = (e) => {
             if(this.filter.classList.contains('open')) {
                 this.filter.classList.remove('open');
                 fitersWrapper.style.paddingTop = '0px';
                 fitersWrapper.style.maxHeight = '0px';
-                inputDrop.removeAllClass();
+                inputDrop.removeAllClass(e);
                 if(!Cameras.wrapper.dataset.filter) {
                     this.changeGrid([2, 2, 16])
                 }else{
@@ -67,27 +66,33 @@ export const Fitlers = {
     removeDropClass() {
         this.filter.onclick = (e) => {
             if(e.target.classList.contains('filters-wrapper')) {
-                inputDrop.removeAllClass();
+                inputDrop.removeAllClass(e);
             }
         }
     }
 }
 
-const inputDrop = {
+export const inputDrop = {
     inputs: document.querySelectorAll('.input-item-drop'),
 
     init() {
         if(this.inputs.length > 0) {
             this.listener();
-            Fitlers.removeDropClass();
+            if(Fitlers.filter) {
+                Fitlers.removeDropClass();
+            }
         }
     },
 
     listener() {
         this.inputs.forEach(input => {
-            input.onclick = () => {
-                this.removeAllClass();
-                input.classList.add('open');
+            input.onclick = (e) => {
+                this.removeAllClass(e);
+                if(input.classList.contains('open')) {
+                    input.classList.remove('open');
+                }else{
+                    input.classList.add('open');
+                }
             }
 
             const list = input.querySelector('.drop-list')
@@ -119,9 +124,11 @@ const inputDrop = {
         })
     },
 
-    removeAllClass() {
+    removeAllClass(e) {
         for(let i = 0; i < this.inputs.length; i++) {
-            this.inputs[i].classList.remove('open')
+            if(e.target !== this.inputs[i]) {
+                this.inputs[i].classList.remove('open')
+            }
         }
     },
 
