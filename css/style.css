@@ -972,23 +972,10 @@ main.view {
   white-space: nowrap;
   z-index: 5;
   display: none;
-  -webkit-transform: translate();
-          transform: translate();
   border-radius: 12px;
 }
 .hint.active {
   display: block;
-}
-.hint::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: var(--color-gray);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-          transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .popup {
