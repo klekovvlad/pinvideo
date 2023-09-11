@@ -5,6 +5,17 @@
     justify-content: start;
     gap: 8px;
 
+    &.error {
+        .input-item,
+        .input-number {
+            input[type=text],
+            input[type=tel],
+            textarea {
+                border: 1px solid var(--color-red);
+            }
+        }
+    }
+
     .input {
         &-label {
             font-weight: 300;
@@ -13,6 +24,27 @@
                 overflow-wrap: break-word;
                 word-break: break-all;
                 white-space: pre-wrap;
+            }
+
+            .required {
+                color: var(--color-redbright);
+            }
+        }
+
+        &-error {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 8px;
+            color: var(--color-red);
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background: url('../img/icons/error-icon.svg') no-repeat center;
+                background-size: contain;
             }
         }
 

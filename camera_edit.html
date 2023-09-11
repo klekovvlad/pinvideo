@@ -81,11 +81,12 @@
 
             <div class="title-2">Видеопоток</div>
 
-            <div class="input-wrapper">
-                <div class="input-label">Название*:</div>
+            <div class="input-wrapper error">
+                <div class="input-label">Название <span class="required">*</span> :</div>
                 <div class="input-item">
                     <input type="text" placeholder="Камера 1">
                 </div>
+                <div class="input-error">Обязательное поле для заполнения</div>
             </div>
 
             <div class="input-wrapper">
@@ -103,7 +104,7 @@
             </div>
 
             <div class="input-row">
-                <div class="input-wrapper">
+                <div class="input-wrapper error">
                     <div class="input-label">Архив:</div>
                     <div class="input-number-wrapper">
                         <div class="input-number">
@@ -113,6 +114,7 @@
                         </div>
                         <div class="input-number-text" data-type="hours">час</div>
                     </div>
+                    <div class="input-error">Время архива превышает лимит по тарифу</div>
                 </div>
 
                 <button class="button button-dark">Сохранить</button>

@@ -20,7 +20,8 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 91px);
+    min-height: calc(100vh - 101px);
+    max-height: calc(100vh - 101px);
     overflow: hidden;
     
 
@@ -44,6 +45,6 @@ main {
     &.tariffpage,
     &.camera-editpage {
         gap: 32px;
-        height: 100%;
+        max-height: max-content;
     }
 }

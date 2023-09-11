@@ -117,7 +117,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: calc(100vh - 91px);
+  min-height: calc(100vh - 101px);
+  max-height: calc(100vh - 101px);
   overflow: hidden;
 }
 @media (max-width: 767px) {
@@ -141,7 +142,9 @@ main:not(.login) {
 }
 main.tariffpage, main.camera-editpage {
   gap: 32px;
-  height: 100%;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
 }
 
 .logo {
@@ -344,6 +347,14 @@ main.tariffpage, main.camera-editpage {
           justify-content: start;
   gap: 8px;
 }
+.input-wrapper.error .input-item input[type=text],
+.input-wrapper.error .input-item input[type=tel],
+.input-wrapper.error .input-item textarea,
+.input-wrapper.error .input-number input[type=text],
+.input-wrapper.error .input-number input[type=tel],
+.input-wrapper.error .input-number textarea {
+  border: 1px solid var(--color-red);
+}
 .input-wrapper .input-label {
   font-weight: 300;
 }
@@ -353,6 +364,30 @@ main.tariffpage, main.camera-editpage {
     word-break: break-all;
     white-space: pre-wrap;
   }
+}
+.input-wrapper .input-label .required {
+  color: var(--color-redbright);
+}
+.input-wrapper .input-error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 8px;
+  color: var(--color-red);
+}
+.input-wrapper .input-error::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("../img/icons/error-icon.svg") no-repeat center;
+  background-size: contain;
 }
 .input-wrapper .input-item {
   width: 100%;
