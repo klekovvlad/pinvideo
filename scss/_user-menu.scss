@@ -25,7 +25,7 @@
         justify-content: start;
         gap: 8px;
 
-        @include mobile {
+        @include pre-mob {
             font-size: 14px;
         }
 
@@ -58,7 +58,7 @@
         transition: transform .3s ease-out, opacity .3s ease-in;
         z-index: 5;
 
-        @include mobile {
+        @include pre-mob {
             right: 24px;
             padding: 24px;
 
@@ -75,7 +75,7 @@
         grid-template-columns: auto 1fr;
         grid-gap: 8px 0px;
 
-        @include mobile {
+        @include pre-mob {
             font-size: 14px;
         }
 
@@ -89,7 +89,7 @@
             grid-row-start: span 2;
             margin-right: 10px;
 
-            @include mobile {
+            @include pre-mob {
                 width: 40px;
                 height: 40px;
                 background-size: 40px 40px;
@@ -105,7 +105,7 @@
                 font-size: 30px;
                 color: var(--color-black);
 
-                @include mobile {
+                @include pre-mob {
                     font-size: 18px;
                 }
             }
@@ -115,7 +115,7 @@
                 height: 73px;
                 background-size: 63px 63px;
 
-                @include mobile {
+                @include pre-mob {
                     width: 50px;
                     height: 50px;
                     background-size: 50px 50px;

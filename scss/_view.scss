@@ -1,0 +1,266 @@
+.view {
+    position: relative;
+
+    &-wrapper {
+        background: #fff;
+        border: 1px solid var(--color-red);
+        overflow: hidden;
+        border-radius: 28px;
+        aspect-ratio: var(--aspect-ratio);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        grid-template-rows: 1fr 150px;
+
+        @include pre-mob {
+            margin-right: 140px;
+            grid-template-rows: 1fr 70px;
+        }
+
+        @include mobile {
+            margin: 0;
+            aspect-ratio: auto;
+            grid-template-rows: 1fr 200px;
+        }
+    }
+
+    &-content {
+        background: var(--color-dark);
+
+        @include mobile {
+            aspect-ratio: var(--aspect-ratio);
+        }
+    }
+
+    &-controls {
+        overflow: hidden;
+
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+    }
+
+    &-timeline {
+        cursor: pointer;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 0;
+        background: var(--color-gray);
+        height: 8px;
+        width: calc(88px * 24);
+        margin: 0px 0px 0px 30px;
+        position: relative;
+
+        @include pre-mob {
+            height: 4px;
+            width: calc(40px * 24);
+        }
+
+        &-wrapper {
+            padding: 76px 0px 10px;
+            overflow: auto;
+
+            @media (768px < width < 968px) {
+                padding: 40px 0px 10px;
+            }
+            
+            // &:hover {
+            //     &::-webkit-scrollbar {
+            //         display: block;
+            //     }
+            // }
+
+            &::-webkit-scrollbar {
+                cursor: grab;
+                appearance: none;
+                height: 6px;
+                display: none;
+            }
+
+            &::-webkit-scrollbar-track {
+                height: 6px;
+                background: var(--color-lightbg);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                height: 6px;
+                background: rgba($color: #3A6185, $alpha: .5);
+                border-radius: 3px;
+            }
+        }
+    }
+
+    &-hour {
+        height: 100%;
+        flex: 0 0 88px;       
+        position: relative;
+
+        @include pre-mob {
+            flex: 0 0 40px;
+        }
+
+        &.red {
+            background: var(--color-red);
+        }
+
+        &.green {
+            background: var(--color-green);
+        }
+
+        &::before {
+            content: '';
+            width: 2px;
+            height: 14px;
+            background: var(--color-gray);
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -100%);
+
+            @include pre-mob {
+                height: 8px;
+            }
+        }
+
+        &:first-child {
+            &::before {
+                height: 22px;
+                top: 100%;
+
+                @include pre-mob {
+                    height: 12px;
+                }
+            }
+        }
+
+        &::after {
+            content: attr(data-time);
+            font-weight: 300;
+            position: absolute;
+            top: -18px;
+            transform: translate(-50%, -100%);
+            font-weight: 300;
+
+            @include pre-mob {
+                top: -10px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    &-curent {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--color-redbright);
+        border: 5px solid #fff;
+
+        @include pre-mob {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+        }
+
+        &::before {
+            content: '';
+            width: 4px;
+            height: 80px;
+            background: var(--color-redbright);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+
+            @include pre-mob {
+                width: 2px;
+            }
+        }
+
+        &-date {
+            position: absolute;
+            top: -64px;
+            left: -84px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 38px;
+
+            @include pre-mob {
+                left: -66px;
+            }
+        }
+
+        &-day,
+        &-time {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--color-gray);
+            white-space: nowrap;
+
+            @include pre-mob {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &-buttons {
+        padding: 10px 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        @include pre-mob {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        @media (768px < width < 968px) {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 125px;
+            z-index: 2;
+            border: 2px solid var(--color-red);
+            background: #fff;
+            border-radius: 28px;
+            padding: 24px 26px;
+            gap: 20px 10px;
+        }
+
+
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            img {
+                object-fit: contain;
+                object-position: center;
+                margin: auto;
+            }
+
+            &:nth-child(2) {
+                margin-right: 50px;
+
+                @include pre-mob {
+                    margin: 0;
+                }
+            }
+
+            &:nth-child(11) {
+                margin-left: 50px;
+
+                @include pre-mob {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

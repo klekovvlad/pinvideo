@@ -6,7 +6,7 @@
     background-position: center left;
     background-size: contain;
 
-    @include mobile {
+    @include pre-mob {
         width: 30px;
         height: 30px;
         background-image: url('../img/logo-mob.svg');

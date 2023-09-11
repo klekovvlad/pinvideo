@@ -5,7 +5,7 @@
     background-size: contain;
     display: inline-block;
 
-    @include mobile {
+    @include pre-mob {
         width: 16px;
         height: 16px;
     }

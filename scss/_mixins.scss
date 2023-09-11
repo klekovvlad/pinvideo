@@ -9,6 +9,12 @@
     }
 }
 
+@mixin pre-mob() {
+    @media (max-width: 968px) {
+        @content;
+    }
+}
+
 @mixin mobile() {
     @media (max-width: 767px) {
         @content;

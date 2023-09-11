@@ -9,7 +9,7 @@
     z-index: 10;
     background: #fff;
 
-    @include mobile {
+    @include pre-mob {
         padding: 6px 24px;
         grid-gap: 16px;
     }
@@ -21,7 +21,7 @@
         gap: 16px;
         margin-right: auto;
 
-        @include mobile {
+        @include pre-mob {
             gap: 8px;
         }
 
@@ -33,7 +33,7 @@
             text-decoration-thickness: 2px;
             text-underline-offset: 4px;
 
-            @include mobile {
+            @include pre-mob {
                 font-size: 14px;
                 text-underline-offset: 2px;
             }
