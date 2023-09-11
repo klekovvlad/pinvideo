@@ -17,27 +17,27 @@ button {
   background: transparent;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: inherit;
   font-size: inherit;
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   font-family: inherit;
   font-size: inherit;
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-family: inherit;
   font-size: inherit;
 }
 
-input::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   font-family: inherit;
   font-size: inherit;
 }
 
-input, input::placeholder {
+input, input::placeholder, textarea, textarea::placeholder {
   font-family: inherit;
   font-size: inherit;
 }
@@ -110,8 +110,13 @@ body {
 }
 
 main {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: calc(100vh - 91px);
   overflow: hidden;
 }
@@ -121,7 +126,6 @@ main {
     max-height: -webkit-max-content;
     max-height: -moz-max-content;
     max-height: max-content;
-    grid-gap: 12px;
   }
 }
 main:not(.login) {
@@ -132,9 +136,10 @@ main:not(.login) {
 @media (max-width: 767px) {
   main:not(.login) {
     padding: 12px;
+    gap: 12px;
   }
 }
-main.tariffpage {
+main.tariffpage, main.camera-editpage {
   gap: 32px;
   height: 100%;
 }
@@ -384,6 +389,11 @@ main.tariffpage {
   outline: none;
   border: 1px solid var(--color-black);
 }
+.input-wrapper .input-item textarea {
+  resize: vertical;
+  min-height: 96px;
+  max-height: 300px;
+}
 .input-wrapper .input-item-drop {
   position: relative;
 }
@@ -394,6 +404,10 @@ main.tariffpage {
   display: inline-block;
   background: url("../img/icons/list-icon.svg") no-repeat center;
   background-size: contain;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 .input-wrapper .input-item-drop::after {
   position: absolute;
@@ -850,6 +864,10 @@ main.tariffpage {
   display: inline-block;
   background: url("../img/icons/list-icon.svg") no-repeat center;
   background-size: contain;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 @media (max-width: 767px) {
   .filters-button {
@@ -952,7 +970,7 @@ main.tariffpage {
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   overflow: auto;
-  padding: 95px 0px 10px 0px;
+  padding: 150px 0px 10px 0px;
 }
 @media (max-width: 767px) {
   .popup {
@@ -1053,6 +1071,55 @@ main.tariffpage {
             transform: rotate(360deg);
   }
 }
+.drop {
+  position: relative;
+}
+.drop-button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: start;
+  gap: 10px;
+}
+.drop-button::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url("../img/icons/list-icon.svg") no-repeat center;
+  background-size: contain;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+.drop-content {
+  display: none;
+}
+.drop.open .drop-content {
+  display: block;
+}
+.drop.open .drop-button::after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.drop.delete .drop-button {
+  font-size: 26px;
+  color: var(--color-gray);
+}
+.drop.delete .drop-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate(0, calc(100% + 32px));
+          transform: translate(0, calc(100% + 32px));
+}
+
 .login {
   display: grid;
   grid-template-columns: 1fr 40%;
@@ -1557,12 +1624,8 @@ main.tariffpage {
   }
 }
 
-.camerapage {
-  grid-template-rows: auto 100%;
-}
 .camerapage-wrapper {
   padding: 32px;
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 64px;
@@ -1604,4 +1667,61 @@ main.tariffpage {
 }
 .camerapage-info .button {
   margin-top: auto;
+}
+
+.camera-editpage .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 16px;
+  width: min(728px, 100%);
+  margin: 0px auto;
+  padding: 32px;
+}
+.camera-editpage .box .input-row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .camera-editpage .box .input-row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.camera-editpage .box .title {
+  text-align: center;
+}
+.camera-editpage .box .delete {
+  padding: 16px 0px;
+}
+@media (max-width: 767px) {
+  .camera-editpage .box .button {
+    width: 100%;
+  }
+  .camera-editpage .box .drop-button {
+    font-size: 18px;
+  }
+  .camera-editpage .box .input-number-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

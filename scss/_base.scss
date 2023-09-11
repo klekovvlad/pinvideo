@@ -18,8 +18,8 @@ body {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     height: calc(100vh - 91px);
     overflow: hidden;
     
@@ -27,7 +27,6 @@ main {
     @include mobile {
         min-height: calc(100vh - 43px);
         max-height: max-content;
-        grid-gap: 12px;
     }
 
     &:not(.login) {
@@ -37,10 +36,13 @@ main {
 
         @include mobile {
             padding: 12px;
+            gap: 12px;
+
         }
     }
 
-    &.tariffpage {
+    &.tariffpage,
+    &.camera-editpage {
         gap: 32px;
         height: 100%;
     }

@@ -28,7 +28,7 @@ export const InputsNumbers = {
             value++
         }
 
-        input.value = `${input.dataset.pre}${value}`;
+        input.value = `${input.dataset.pre ? input.dataset.pre : ''}${value}`;
 
         this.changeNumberText(element, value);
     },

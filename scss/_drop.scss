@@ -1,0 +1,48 @@
+.drop {
+    position: relative;
+
+    &-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-self: start;
+        gap: 10px;
+        @include listIcon();
+    }
+
+    &-content {
+        display: none;
+    }
+
+    &.open {
+        .drop {
+            &-content {
+                display: block;
+            }
+
+            &-button {
+                &::after {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    &.delete {
+        .drop {
+            &-button {
+                font-size: 26px;
+                color: var(--color-gray);
+            }
+
+            &-content {
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                transform: translate(0, calc(100% + 32px));
+            }
+        }
+    }
+}

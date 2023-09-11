@@ -39,6 +39,12 @@
                 
             }
 
+            textarea {
+                resize: vertical;
+                min-height: 96px;
+                max-height: 300px;
+            }
+
             &-drop {
                 position: relative;
 

@@ -41,5 +41,6 @@
         display: inline-block;
         background: url('../img/icons/list-icon.svg') no-repeat center;
         background-size: contain;
+        transition: transform .3s linear;
     }
 }

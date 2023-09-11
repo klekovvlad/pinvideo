@@ -1,0 +1,44 @@
+.camera-editpage {
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: start;
+        gap: 16px;
+        width: min(728px, 100%);
+        margin: 0px auto;
+        padding: 32px;
+
+        .input-row {
+            justify-content: space-between;
+
+            @include mobile {
+                justify-content: start;
+                flex-direction: column;
+            }
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .delete {
+            padding: 16px 0px;
+        }
+
+        @include mobile {
+            .button {
+                width: 100%;
+            }
+
+            .drop-button {
+                font-size: 18px;
+            }
+
+            .input-number-wrapper {
+                flex-direction: row;
+                gap: 10px;
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@ button {
     background: transparent;
 }
 
-input, input::placeholder {
+input, input::placeholder, textarea, textarea::placeholder {
     font-family: inherit;
     font-size: inherit;
 }

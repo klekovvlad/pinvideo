@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Страница c редактирования камеры</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="videos.html" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>
+
+    <main class="camera-editpage">
+        <div class="camera-editpage-wrapper box">
+            <div class="title">Камера 1</div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Видеопоток:</div>
+                <div class="input-item">
+                    <input type="text" placeholder="rtsp://login:password@192.168.1.12/stream1">
+                </div>
+            </div>
+
+            <div class="input-row delete-wrapper">
+                <button class="button button-blue">Проверить</button>
+
+                <div class="delete drop">
+                    <button class="drop-button">Удалить камеру</button>
+                    <div class="drop-content">
+                        <button class="button button-red" data-popup="delete">Удалить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title-2">Видеопоток</div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Название*:</div>
+                <div class="input-item">
+                    <input type="text" placeholder="Камера 1">
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Описание:</div>
+                <div class="input-item">
+                    <textarea placeholder="Описание"></textarea>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Теги (введите через запятую):</div>
+                <div class="input-item">
+                    <input type="text" placeholder="teg1, teg2, teg3, teg4">
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-wrapper">
+                    <div class="input-label">Архив:</div>
+                    <div class="input-number-wrapper">
+                        <div class="input-number">
+                            <input name="" type="text" value="1">
+                            <button class="input-number-button input-number-prev"></button>
+                            <button class="input-number-button input-number-next"></button>
+                        </div>
+                        <div class="input-number-text" data-type="hours">час</div>
+                    </div>
+                </div>
+
+                <button class="button button-dark">Сохранить</button>
+            </div>
+
+            <div class="input-row">
+                <p class="desc">
+                    Глубина архива: 1 день <br>
+                    Тариф: Standard
+                </p>
+
+                <button class="button button-dark">Изменить тариф</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="popup" id="delete">
+        <div class="popup-body box">
+            <div class="title">Подтвердите удаление</div>
+            <div class="buttons">
+                <button class="button button-red">Удалить</button>
+                <button class="button button-light popup-close">Отменить</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

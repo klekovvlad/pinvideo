@@ -1,8 +1,6 @@
 .camerapage {
-    grid-template-rows: auto 100%;
     &-wrapper {
         padding: 32px;
-        height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 64px;
