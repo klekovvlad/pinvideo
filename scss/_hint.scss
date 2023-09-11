@@ -8,21 +8,9 @@
     white-space: nowrap;
     z-index: 5;
     display: none;
-    transform: translate();
     border-radius: 12px;
 
     &.active {
         display: block;
-    }
-
-    &::before {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background: var(--color-gray);
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
