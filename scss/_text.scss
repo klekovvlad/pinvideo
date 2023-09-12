@@ -59,3 +59,56 @@
         }
     }
 }
+
+.payment-success {
+    .payment-date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 22px;    
+            height: 22px;
+            background: url('../img/icons/payment-ok-icon.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+}
+
+.price {
+    font-weight: 300;
+    font-size: 26px;
+
+    @include mobile {
+        font-size: 20px;
+    }
+
+    &-old {
+        color: var(--color-gray);
+        text-decoration: line-through;
+    }
+}
+
+.field-error {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    color: var(--color-red);
+
+    @include mobile {
+        font-size: 14px;
+    }
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: url('../img/icons/error-icon.svg') no-repeat center;
+        background-size: contain;
+    }
+}

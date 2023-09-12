@@ -31,23 +31,6 @@
             }
         }
 
-        &-error {
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            gap: 8px;
-            color: var(--color-red);
-
-            &::before {
-                content: '';
-                display: inline-block;
-                width: 15px;
-                height: 15px;
-                background: url('../img/icons/error-icon.svg') no-repeat center;
-                background-size: contain;
-            }
-        }
-
         &-item {
             width: 100%;
 
@@ -229,6 +212,7 @@
 
 .input-number {
     position: relative;
+    max-width: max-content;
 
     &-wrapper {
         display: flex;

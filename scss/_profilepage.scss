@@ -4,9 +4,34 @@
     grid-gap: 32px;
     max-height: 100%;
 
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+    }
+
+    .field-error {
+        margin: 16px 0px 0px;
+
+        @include mobile {
+            margin: 10px 0px 0px;
+        }
+    }
+
+    .desc {
+        font-size: 20px;
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
     .accordion.open {
         .accordion-label {
             margin: 0px 0px 32px;
+
+            @include mobile {
+                margin: 0px 0px 16px;
+            }
         }
     }
 
@@ -29,7 +54,11 @@
     }
 
     &-content {
-        @include flexCol(32px)
+        @include flexCol(32px);
+
+        @include mobile {
+            gap: 16px;
+        }
     }
 
     &-info {
@@ -47,14 +76,34 @@
             font-size: 0.88rem;
             color: var(--color-blue);
         }
+
+        &-error {
+            .profilepage-info-value {
+                color: var(--color-red);
+            }
+        }
     }
 
     &-verification {
         background: transparent;
         @include flexCol(32px);
+        font-weight: 300;
+
+        @include mobile {
+            gap: 16px;
+        }
 
         .title {
             text-align: center;
+            font-weight: 300;
+        }
+
+        .button {
+            margin: 0px auto;
+        }
+
+        .desc {
+            font-size: 18px;
         }
 
         &__success {
@@ -62,20 +111,50 @@
                 color: var(--color-blue);
             }
         }
+
+        &__error {
+            .title {
+                color: var(--color-red);
+            }
+        }
     }
 
     .box:has(.profilepage-table) {
         padding: 12px 8px 12px 32px;
+
+        @include mobile {
+            padding: 12px 24px 12px 24px;
+        }
     }
 
     &-table {
         padding: 0px 20px 0px 0px;
+
+        @include mobile {
+            padding: 0;
+        }
+
+        &__payment {
+            table {
+                td:last-child {
+                    width: 50%;
+
+                    @include tablet {
+                        width: 40%;
+                    }
+                }
+            }
+        }
     }
 
     table {
         width: 100%;
         display: table;
         font-weight: 300;
+
+        @include mobile {
+            font-size: 14px;
+        }
 
         thead, tbody tr {
             width: 100%;
@@ -87,6 +166,18 @@
             td {
                 padding: 16px 4px;
                 border-bottom: 1px solid var(--color-border);
+
+                @include tablet {
+                    margin-top: auto;
+                }
+
+                .table-date {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 8px;
+                }
             }
         }
         tbody {
@@ -111,5 +202,57 @@
                 }
             }
         }
+    }
+
+    @include mobile {
+        table {
+            thead, tbody {
+                tr {
+                    display: grid;
+                    align-items: center;
+                    grid-gap: 10px 20px;
+                    grid-template-columns: repeat(2, 1fr);
+                    border-bottom: 1px solid var(--color-border);
+
+                    td {
+                        padding: 0px !important;
+                    }
+                }
+            }
+
+            thead {
+                tr {
+                    padding: 16px 0px;
+                }
+                td {
+                    border: none;
+                }
+            }
+
+            tbody {
+                tr {
+                    padding: 8px 0px;
+                }
+            }
+        }
+
+        &-table__payment {
+            table {
+                thead,tbody {
+                    tr {
+                        td:last-child {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            td:first-child {
+                grid-row-start: span 2
+            }
+        }
+    }
+
+    &-promotion {
+        @include flexCol(16px);
     }
 }

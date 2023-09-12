@@ -11,7 +11,7 @@
     <header class="header">
         <a href="/" class="logo"></a>
         <nav class="header-nav">
-            <a href="videos.html" class="header-nav-link">Видеопотоки</a>
+            <a href="" class="header-nav-link">Видеопотоки</a>
         </nav>
         <div class="user">
             <div class="user-curent">Person</div>
@@ -68,46 +68,37 @@
                 <button class="button button-blue">Пополнить</button>
             </div>
 
-            <div class="profilepage-verification profilepage-verification__success box">
-                <div class="title">Аккаунт верифицирован</div>
-            </div>
-
-            <div class="profilepage-promotion box box-center">
-                <div class="price price-old">894 руб/мес</div>
-                <div class="price price-new">594 руб/мес</div>
-                <div class="desc">Выгода 33% при оплате за 3 месяца</div>
-                <button class="button button-blue">Оплатить вперед</button>
-            </div>
-
-            <div class="profilepage-remind box">
-                <div class="desc">
-                    Напоминаем, что 1.10.2023 спишется 894,00 руб. <br>Пополните баланс заранее
-                </div>
+            <div class="profilepage-verification profilepage-verification__error box">
+                <div class="title">Пройдите верификацию</div>
+                <div class="desc">Чтобы подключить платные тарифы, подтвердите номер телефона или привяжите аккаунт на гос услугах.</div>
+                <button class="button button-blue">Верифицировать</button>
             </div>
         </div>
         
         <div class="profilepage-col">
-            <div class="accordion box">
+            <div class="accordion open box">
                 <button class="accordion-label">Основная информация</button>
                 <div class="accordion-content profilepage-content">
                     <div class="profilepage-info">
                         <span class="profilepage-info-title">Имя:</span>
                         <span class="profilepage-info-value">Person</span>
                     </div>
-                    <div class="profilepage-info"> 
+                    <div class="profilepage-info profilepage-info-error"> 
                         <span class="profilepage-info-title">Номер телефона:</span>
                         <span class="profilepage-info-value"><a href="tel:+79012345678">+79012345678</a></span>
+                        <div class="field-error">Подтвердите номер телефона</div>
                     </div>
-                    <div class="profilepage-info">
+                    <div class="profilepage-info profilepage-info-error">
                         <span class="profilepage-info-title">Email:</span>
                         <span class="profilepage-info-value"><a href="mailto:Email@.com">Email@.com</a></span>
+                        <div class="field-error">Подтвердите адрес почты</div>
                     </div>
                     <div class="profilepage-info-desc">Для редактирования данных перейдите в pinid</div>
                     <a href="#" class="button button-dark">Вход в pinid</a>
                 </div>
             </div>
 
-            <div class="accordion open box">
+            <div class="accordion box">
                 <button class="accordion-label">История платежей</button>
                 <div class="accordion-content profilepage-table">
                     <table cellspacing="0" cellpagging="0">

@@ -10,6 +10,10 @@
         gap: 10px;
         @include listIcon();
         transition: margin .3s linear;
+
+        @include mobile {
+            font-size: 18px;
+        }
     }
 
     &-content {
