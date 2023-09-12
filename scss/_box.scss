@@ -7,4 +7,11 @@
     @include mobile {
         padding: 16px 24px;
     }
+
+    &-center {
+        text-align: center;
+        .button {
+            margin: 0px auto;
+        }
+    }
 }

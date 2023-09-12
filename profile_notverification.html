@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Страница c камерой</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>
+
+    <main class="profilepage">
+        <div class="profilepage-col">
+
+            <div class="profilepage-box box">
+                <div class="title">Мой счет</div>
+                <div class="desc">0123456789</div>
+                <div class="balance">Баланс 2250,00 руб.</div>
+                <div class="balance-date">На 1.09.2023 в 12:00 <button class="update"></button></div>
+                <button class="button button-blue">Пополнить</button>
+            </div>
+
+            <div class="profilepage-verification profilepage-verification__error box">
+                <div class="title">Пройдите верификацию</div>
+                <div class="desc">Чтобы подключить платные тарифы, подтвердите номер телефона или привяжите аккаунт на гос услугах.</div>
+                <button class="button button-blue">Верифицировать</button>
+            </div>
+        </div>
+        
+        <div class="profilepage-col">
+            <div class="accordion open box">
+                <button class="accordion-label">Основная информация</button>
+                <div class="accordion-content profilepage-content">
+                    <div class="profilepage-info">
+                        <span class="profilepage-info-title">Имя:</span>
+                        <span class="profilepage-info-value">Person</span>
+                    </div>
+                    <div class="profilepage-info profilepage-info-error"> 
+                        <span class="profilepage-info-title">Номер телефона:</span>
+                        <span class="profilepage-info-value"><a href="tel:+79012345678">+79012345678</a></span>
+                        <div class="field-error">Подтвердите номер телефона</div>
+                    </div>
+                    <div class="profilepage-info profilepage-info-error">
+                        <span class="profilepage-info-title">Email:</span>
+                        <span class="profilepage-info-value"><a href="mailto:Email@.com">Email@.com</a></span>
+                        <div class="field-error">Подтвердите адрес почты</div>
+                    </div>
+                    <div class="profilepage-info-desc">Для редактирования данных перейдите в pinid</div>
+                    <a href="#" class="button button-dark">Вход в pinid</a>
+                </div>
+            </div>
+
+            <div class="accordion box">
+                <button class="accordion-label">История платежей</button>
+                <div class="accordion-content profilepage-table">
+                    <table cellspacing="0" cellpagging="0">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <div class="table-date">
+                                        Дата <button class="check-date"></button>
+                                    </div>
+                                </td>
+                                <td>Сумма, руб.</td>
+                                <td>Детали операций</td>
+                                <td>Баланс, руб</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="balance-top">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">-150,00</span></td>
+                                <td>Оплата услуг</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-down">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">+1500,00</span></td>
+                                <td>Пополнение баланса</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-top">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">-150,00</span></td>
+                                <td>Оплата услуг</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-down">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">+1500,00</span></td>
+                                <td>Пополнение баланса</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-top">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">-150,00</span></td>
+                                <td>Оплата услуг</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-down">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">+1500,00</span></td>
+                                <td>Пополнение баланса</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-top">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">-150,00</span></td>
+                                <td>Оплата услуг</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-down">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">+1500,00</span></td>
+                                <td>Пополнение баланса</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-top">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">-150,00</span></td>
+                                <td>Оплата услуг</td>
+                                <td>2250,00</td>
+                            </tr>
+                            <tr class="balance-down">
+                                <td>1.09.2023 12:00</td>
+                                <td><span class="value">+1500,00</span></td>
+                                <td>Пополнение баланса</td>
+                                <td>2250,00</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="accordion box">
+                <button class="accordion-label">График платежей</button>
+                <div class="accordion-content profilepage-table profilepage-table__payment">
+                    <table cellspacing="0" cellpagging="0">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <div class="table-date">
+                                        Дата 
+                                        <div class="input-number">
+                                            <input type="text" name="speed" value="2023">
+                                            <button class="input-number-button input-number-prev"></button>
+                                            <button class="input-number-button input-number-next"></button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Сумма, руб.</td>
+                                <td>Детали операций</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr class="payment-success">
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="payment-date">1.01.2023 12:00</span>
+                                </td>
+                                <td>150,00</td>
+                                <td>Оплата услуг</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -50,3 +50,11 @@
         transition: transform .3s linear;
     }
 }
+
+@mixin flexCol($gap) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: $gap;
+}

@@ -7,7 +7,7 @@ export const Fitlers = {
 
     init() {
         if(this.filter) {
-            this.open()
+            // this.open()
             this.renderTableList();
         }
     },
@@ -26,34 +26,34 @@ export const Fitlers = {
         }
     },
     
-    open() {
-        const button = this.filter.querySelector('.filters-button');
-        const fitersWrapper = this.filter.querySelector('.filters-wrapper');
-        const fitersWrapperHeight = fitersWrapper.scrollHeight;
-        button.onclick = (e) => {
-            if(this.filter.classList.contains('open')) {
-                this.filter.classList.remove('open');
-                fitersWrapper.style.paddingTop = '0px';
-                fitersWrapper.style.maxHeight = '0px';
-                inputDrop.removeAllClass(e);
-                if(!Cameras.wrapper.dataset.filter) {
-                    this.changeGrid([2, 2, 16])
-                }else{
-                    this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
-                }
-            }else {
-                this.filter.classList.add('open');
-                fitersWrapper.style.paddingTop = '16px';
-                fitersWrapper.style.maxHeight = `${fitersWrapperHeight}px`
-                if(!Cameras.wrapper.dataset.filter) {
-                    this.changeGrid([3, 2, 16])
-                }else{
-                    console.log(Cameras.wrapper.dataset.filter.split(','))
-                    this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
-                }
-            }
-        }
-    },
+    // open() {
+    //     // const button = this.filter.querySelector('.filters-button');
+    //     // const fitersWrapper = this.filter.querySelector('.filters-wrapper');
+    //     // const fitersWrapperHeight = fitersWrapper.scrollHeight;
+    //     // button.onclick = (e) => {
+    //     //     if(this.filter.classList.contains('open')) {
+    //     //         this.filter.classList.remove('open');
+    //     //         fitersWrapper.style.paddingTop = '0px';
+    //     //         fitersWrapper.style.maxHeight = '0px';
+    //     //         inputDrop.removeAllClass(e);
+    //     //         if(!Cameras.wrapper.dataset.filter) {
+    //     //             this.changeGrid([2, 2, 16])
+    //     //         }else{
+    //     //             this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
+    //     //         }
+    //     //     }else {
+    //     //         this.filter.classList.add('open');
+    //     //         fitersWrapper.style.paddingTop = '16px';
+    //     //         fitersWrapper.style.maxHeight = `${fitersWrapperHeight}px`
+    //     //         if(!Cameras.wrapper.dataset.filter) {
+    //     //             this.changeGrid([3, 2, 16])
+    //     //         }else{
+    //     //             console.log(Cameras.wrapper.dataset.filter.split(','))
+    //     //             this.changeGrid(Cameras.wrapper.dataset.filter.split(','))
+    //     //         }
+    //     //     }
+    //     // }
+    // },
 
     changeGrid(array) {
         if(Cameras.grid.classList.contains('cameras-grid')) {
