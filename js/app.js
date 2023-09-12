@@ -1,3 +1,4 @@
+import { Accordion } from "./modules/accordion.js";
 import { Cameras } from "./modules/cameras.js";
 import { DropItem } from "./modules/drop.js";
 import { Fitlers, inputDrop } from "./modules/filters.js";
@@ -14,3 +15,11 @@ inputDrop.init()
 InputsNumbers.init();
 Popup.listener();
 DropItem.init();
+
+const accordions = document.querySelectorAll('.accordion');
+if(accordions.length > 0) {
+    accordions.forEach(accodrion => {
+        const AccordionElement = new Accordion(accodrion);
+        AccordionElement.init();
+    })
+}

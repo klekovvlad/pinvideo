@@ -29,4 +29,33 @@
     @include mobile {
         font-size: 18px;
     }
+
+    &-date {
+        font-size: 0.88rem;
+        color: var(--color-gray);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 4px;
+
+        .update {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url('../img/icons/update-icon.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &-top {
+        .value {
+            color: var(--color-blue);
+        }
+    }
+
+    &-down {
+        .value {
+            color: var(--color-gray);
+        }
+    }
 }
