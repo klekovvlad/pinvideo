@@ -7,17 +7,19 @@
     font-size: 20px;
     white-space: nowrap;
     z-index: 5;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     border-radius: 12px;
 
-    @include mobile {
+    @include pre-mob {
         font-size: 14px;
         border-radius: 4px;
         padding: 6px 8px;
     }
 
     &.active {
-        display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     &::before {
@@ -34,7 +36,7 @@
     &__right {
         &::before {
             left: 100%;
-            transform: translate(-150%, -50%) rotate(-45deg);
+            transform: translate(-250%, -50%) rotate(-45deg);
         }
     }
 
