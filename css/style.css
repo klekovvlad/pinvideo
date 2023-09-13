@@ -1056,10 +1056,11 @@ main.view {
   font-size: 20px;
   white-space: nowrap;
   z-index: 5;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   border-radius: 12px;
 }
-@media (max-width: 767px) {
+@media (max-width: 968px) {
   .hint {
     font-size: 14px;
     border-radius: 4px;
@@ -1067,7 +1068,8 @@ main.view {
   }
 }
 .hint.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 .hint::before {
   content: "";
@@ -1082,8 +1084,8 @@ main.view {
 }
 .hint__right::before {
   left: 100%;
-  -webkit-transform: translate(-150%, -50%) rotate(-45deg);
-          transform: translate(-150%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-250%, -50%) rotate(-45deg);
+          transform: translate(-250%, -50%) rotate(-45deg);
 }
 .hint__left::before {
   left: 0;

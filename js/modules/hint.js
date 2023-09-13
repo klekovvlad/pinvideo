@@ -21,17 +21,15 @@ export const Hint = {
                 this.hint.style.top = `${el.getBoundingClientRect().top}px`;
                 this.hint.innerHTML = el.dataset.hint;
                 let translateDif = el.offsetWidth / 2;
-                let padding = 64;
-                if(window.innerWidth < 767) {
-                    padding = 12
-                }
-                if((el.getBoundingClientRect().left + this.hint.offsetWidth) - padding > window.innerWidth) {
+
+                if((el.getBoundingClientRect().left + this.hint.getBoundingClientRect().width) > window.outerWidth) {
                     this.hint.classList.add('hint__right');
-                    translateDif = -(this.hint.offsetWidth / 2) + 20;
-                }else if(el.getBoundingClientRect().left - (this.hint.offsetWidth / 2) < 0) {
+                    translateDif = -(this.hint.getBoundingClientRect().width / 2) + 30;
+                }else if(el.getBoundingClientRect().left - (this.hint.getBoundingClientRect().width / 2) < 0) {
                     this.hint.classList.add('hint__left')
-                    translateDif = (this.hint.offsetWidth / 2) - 10
+                    translateDif = (this.hint.getBoundingClientRect().width / 2) - 10
                 }
+
                 this.hint.style.transform = `translate(calc(-50% + ${(translateDif)}px), calc(${el.offsetHeight}px + 10px))`;
                 this.hint.classList.add('active');
             }
