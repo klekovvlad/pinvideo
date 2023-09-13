@@ -27,7 +27,10 @@ main {
 
     @include pre-mob {
         min-height: calc(100dvh - 43px);
-        max-height: max-content;
+        
+        &:not(.cameraspage) {
+            max-height: max-content;
+        }
     }
 
     &:not(.login) {

@@ -20,10 +20,12 @@ class Cameras {
     }
 
     changeHeight() {
-        const height = ((this.wrapper.clientHeight - this.grid.dataset.gap) / this.grid.dataset.row) - 5;
-        this.cameras.forEach(camera => {
-            camera.style.height = `${height}px`
-        });
+        if(window.innerWidth > 767) {
+            const height = ((this.wrapper.clientHeight - this.grid.dataset.gap) / this.grid.dataset.row) - 5;
+            this.cameras.forEach(camera => {
+                camera.style.height = `${height}px`
+            });
+        }
     }
 }
 

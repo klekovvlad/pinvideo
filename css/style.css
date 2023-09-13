@@ -125,6 +125,8 @@ main {
 @media (max-width: 968px) {
   main {
     min-height: calc(100dvh - 43px);
+  }
+  main:not(.cameraspage) {
     max-height: -webkit-max-content;
     max-height: -moz-max-content;
     max-height: max-content;
@@ -1488,6 +1490,11 @@ main.view {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+@media (max-width: 767px) {
+  .cameras {
+    padding: 16px 24px;
+  }
+}
 .cameras-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1574,6 +1581,11 @@ main.view {
   background: var(--color-border);
   border-radius: 10px;
 }
+@media (max-width: 767px) {
+  .cameras-wrapper {
+    padding: 0;
+  }
+}
 .cameras-grid {
   display: grid;
 }
@@ -1581,13 +1593,38 @@ main.view {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
 }
+@media (max-width: 767px) {
+  .cameras-grid__2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cameras-grid__2 .camera {
+    aspect-ratio: 8/5;
+  }
+}
 .cameras-grid__3 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
 }
+@media (max-width: 767px) {
+  .cameras-grid__3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cameras-grid__3 .camera {
+    aspect-ratio: 8/5;
+  }
+}
 .cameras-grid__5 {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 8px;
+}
+@media (max-width: 767px) {
+  .cameras-grid__5 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px 16px;
+  }
+  .cameras-grid__5 .camera {
+    height: 85px;
+  }
 }
 .cameras-grid__5 .camera-info {
   padding: 3px;
@@ -1597,6 +1634,12 @@ main.view {
   -webkit-transform: translate(-50%, calc(-50% - 15px));
           transform: translate(-50%, calc(-50% - 15px));
   white-space: pre-wrap;
+}
+@media (max-width: 767px) {
+  .cameras-grid__5 .camera[data-status=error]::after {
+    -webkit-transform: translate(-50%, calc(-50% - 10px));
+            transform: translate(-50%, calc(-50% - 10px));
+  }
 }
 .cameras-table {
   width: 100%;
@@ -1704,6 +1747,14 @@ main.view {
   height: 16px;
   border-radius: 50%;
 }
+@media (max-width: 767px) {
+  .camera-status {
+    width: 6px;
+    height: 6px;
+    top: 12px;
+    left: 12px;
+  }
+}
 .camera-open {
   position: absolute;
   top: 24px;
@@ -1712,6 +1763,14 @@ main.view {
   width: 16px;
   background: url("../img/icons/full-screen-icon.svg") no-repeat center;
   background-size: contain;
+}
+@media (max-width: 767px) {
+  .camera-open {
+    width: 6px;
+    height: 6px;
+    top: 12px;
+    right: 12px;
+  }
 }
 .camera-edit {
   position: absolute;
@@ -1723,6 +1782,12 @@ main.view {
   height: 16px;
   background: url("../img/icons/erid-arrow-icon.svg") no-repeat center;
   background-size: cover;
+}
+@media (max-width: 767px) {
+  .camera-edit {
+    width: 6px;
+    height: 6px;
+  }
 }
 .camera[data-status=record] .camera-status {
   background: var(--color-green);
@@ -1738,6 +1803,11 @@ main.view {
   color: var(--color-red);
   text-transform: uppercase;
   white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .camera[data-status=error]::after {
+    font-size: 12px;
+  }
 }
 .camera[data-status=error] .camera-status {
   background: var(--color-red);
