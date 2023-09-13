@@ -1,0 +1,114 @@
+.datepicker {
+
+    &__wrapper {
+        border: 1px solid var(--color-red);
+        border-radius: 32px;
+        width: 280px;
+    }
+
+    &__header {
+        padding: 16px 0px 8px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 120px 1fr;
+        grid-gap: 8px 16px;
+
+        .datepicker__title {
+            padding: 0;
+            line-height: 1;
+            color: var(--color-gray);
+        }
+
+        .datepicker__title:nth-child(2) {
+            font-size: 26px;
+
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+
+        .datepicker__title:nth-child(3) {
+            grid-row-start: 2;
+            grid-column-start: span 3;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .datepicker__prev {
+            margin-left: auto;
+        }
+
+        .datepicker__next {
+            margin-right: auto;
+            transform: rotate(180deg);
+        }
+
+        .datepicker__next,
+        .datepicker__prev {
+            font-size: 0;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url('../img/icons/arrow-icon.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &__cal {
+        td.datepicker__day {
+            border: none;
+            width: 32px;
+            height: 32px;
+            padding: 0 !important;
+            border: none !important;
+
+
+            &.is-today {
+               .datepicker__daynum {
+                text-decoration: none;
+               }
+            }
+
+            .datepicker__daynum {
+                font-size: 20px;
+                font-weight: 300;
+
+                @include mobile {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        tr {
+            td.datepicker__day:first-child {
+                &.is-selected {
+                    div {
+                        border-radius: 50% 0% 0% 50%;
+                    }
+                }
+            }
+
+            td.datepicker__day:last-child {
+                &.is-selected {
+                    div {
+                        border-radius: 0% 50% 50% 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .profilepage-table .datepicker__cal {
+//     padding: 32px 16px;
+//     thead {
+//         tr {
+//             td.datepicker__day {
+//                 border: none;
+//             }
+//         }
+//     }
+//     tbody {
+//         height: max-content;
+//     }
+// }
