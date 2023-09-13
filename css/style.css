@@ -1290,6 +1290,82 @@ main.view {
   visibility: visible;
 }
 
+.datepicker__wrapper {
+  border: 1px solid var(--color-red);
+  border-radius: 32px;
+  width: 280px;
+}
+.datepicker__header {
+  padding: 16px 0px 8px;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr 120px 1fr;
+  grid-gap: 8px 16px;
+}
+.datepicker__header .datepicker__title {
+  padding: 0;
+  line-height: 1;
+  color: var(--color-gray);
+}
+.datepicker__header .datepicker__title:nth-child(2) {
+  font-size: 26px;
+}
+@media (max-width: 767px) {
+  .datepicker__header .datepicker__title:nth-child(2) {
+    font-size: 18px;
+  }
+}
+.datepicker__header .datepicker__title:nth-child(3) {
+  grid-row-start: 2;
+  grid-column-start: span 3;
+  font-size: 16px;
+  font-weight: 300;
+}
+.datepicker__header .datepicker__prev {
+  margin-left: auto;
+}
+.datepicker__header .datepicker__next {
+  margin-right: auto;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.datepicker__header .datepicker__next,
+.datepicker__header .datepicker__prev {
+  font-size: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/arrow-icon.svg") no-repeat center;
+  background-size: contain;
+}
+.datepicker__cal td.datepicker__day {
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  border: none !important;
+}
+.datepicker__cal td.datepicker__day.is-today .datepicker__daynum {
+  text-decoration: none;
+}
+.datepicker__cal td.datepicker__day .datepicker__daynum {
+  font-size: 20px;
+  font-weight: 300;
+}
+@media (max-width: 767px) {
+  .datepicker__cal td.datepicker__day .datepicker__daynum {
+    font-size: 16px;
+  }
+}
+.datepicker__cal tr td.datepicker__day:first-child.is-selected div {
+  border-radius: 50% 0% 0% 50%;
+}
+.datepicker__cal tr td.datepicker__day:last-child.is-selected div {
+  border-radius: 0% 50% 50% 0%;
+}
+
 .login {
   display: grid;
   grid-template-columns: 1fr 40%;
@@ -2343,47 +2419,31 @@ main.view {
     padding: 12px 24px 12px 24px;
   }
 }
-.profilepage-table {
+.profilepage .profilepage-table {
   padding: 0px 20px 0px 0px;
-}
-@media (max-width: 767px) {
-  .profilepage-table {
-    padding: 0;
-  }
-}
-.profilepage-table__payment table td:last-child {
-  width: 50%;
-}
-@media (max-width: 1199px) {
-  .profilepage-table__payment table td:last-child {
-    width: 40%;
-  }
-}
-.profilepage table {
   width: 100%;
-  display: table;
   font-weight: 300;
 }
 @media (max-width: 767px) {
-  .profilepage table {
+  .profilepage .profilepage-table {
     font-size: 14px;
   }
 }
-.profilepage table thead, .profilepage table tbody tr {
+.profilepage .profilepage-table thead, .profilepage .profilepage-table tbody tr {
   width: 100%;
   display: table;
   table-layout: fixed;
 }
-.profilepage table thead td {
+.profilepage .profilepage-table > thead td {
   padding: 16px 4px;
   border-bottom: 1px solid var(--color-border);
 }
 @media (max-width: 1199px) {
-  .profilepage table thead td {
+  .profilepage .profilepage-table > thead td {
     margin-top: auto;
   }
 }
-.profilepage table thead td .table-date {
+.profilepage .profilepage-table > thead td .table-date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2397,35 +2457,48 @@ main.view {
           justify-content: start;
   gap: 8px;
 }
-.profilepage table tbody {
+.profilepage .profilepage-table > tbody {
   display: block;
   height: 400px;
   scrollbar-width: auto;
   scrollbar-color: var(--color-border) var(--color-white);
   overflow: auto;
 }
-.profilepage table tbody::-webkit-scrollbar {
+.profilepage .profilepage-table > tbody::-webkit-scrollbar {
   width: 4px;
 }
-.profilepage table tbody::-webkit-scrollbar-track {
+.profilepage .profilepage-table > tbody::-webkit-scrollbar-track {
   background: var(--color-white);
   border-radius: 10px;
 }
-.profilepage table tbody::-webkit-scrollbar-thumb {
+.profilepage .profilepage-table > tbody::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 10px;
 }
-.profilepage table tbody tr:not(:first-child, :last-child) td {
+.profilepage .profilepage-table > tbody tr:not(:first-child, :last-child) td {
   padding: 8px 4px;
 }
-.profilepage table tbody tr:first-child td {
+.profilepage .profilepage-table > tbody tr:first-child td {
   padding: 16px 4px 8px;
 }
-.profilepage table tbody tr:last-child td {
+.profilepage .profilepage-table > tbody tr:last-child td {
   padding: 8px 4px 0px;
 }
 @media (max-width: 767px) {
-  .profilepage table thead tr, .profilepage table tbody tr {
+  .profilepage .profilepage-table {
+    padding: 0;
+  }
+}
+.profilepage .profilepage-table__payment td:last-child {
+  width: 50%;
+}
+@media (max-width: 1199px) {
+  .profilepage .profilepage-table__payment td:last-child {
+    width: 40%;
+  }
+}
+@media (max-width: 767px) {
+  .profilepage .profilepage-table > thead > tr, .profilepage .profilepage-table > tbody > tr {
     display: grid;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -2434,24 +2507,26 @@ main.view {
     grid-template-columns: repeat(2, 1fr);
     border-bottom: 1px solid var(--color-border);
   }
-  .profilepage table thead tr td, .profilepage table tbody tr td {
+  .profilepage .profilepage-table > thead > tr td, .profilepage .profilepage-table > tbody > tr td {
     padding: 0px !important;
   }
-  .profilepage table thead tr {
+  .profilepage .profilepage-table > thead > tr {
     padding: 16px 0px;
   }
-  .profilepage table thead td {
+  .profilepage .profilepage-table > thead td {
     border: none;
   }
-  .profilepage table tbody tr {
+  .profilepage .profilepage-table > tbody > tr {
     padding: 8px 0px;
   }
-  .profilepage-table__payment table thead tr td:last-child, .profilepage-table__payment table tbody tr td:last-child {
+}
+@media (max-width: 767px) {
+  .profilepage .profilepage-table__payment thead tr td:last-child, .profilepage .profilepage-table__payment tbody tr td:last-child {
     width: 100%;
   }
-  .profilepage-table__payment td:first-child {
-    grid-row-start: span 2;
-  }
+}
+.profilepage .profilepage-table__payment td:first-child {
+  grid-row-start: span 2;
 }
 .profilepage-promotion {
   display: -webkit-box;

@@ -23,3 +23,12 @@ if(accordions.length > 0) {
         AccordionElement.init();
     })
 }
+
+const datePickerButtons = document.querySelectorAll('button.check-date');
+if(datePickerButtons.length > 0) {
+    datePickerButtons.forEach(button => {
+        const datePicker = new Datepicker(button, {
+            multiple: true,
+        })
+    })
+}

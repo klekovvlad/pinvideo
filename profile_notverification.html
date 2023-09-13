@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/datepicker.minimal.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Страница c камерой</title>
 </head>
@@ -100,8 +101,8 @@
 
             <div class="accordion box">
                 <button class="accordion-label">История платежей</button>
-                <div class="accordion-content profilepage-table">
-                    <table cellspacing="0" cellpagging="0">
+                <div class="accordion-content ">
+                    <table cellspacing="0" cellpagging="0" class="profilepage-table">
                         <thead>
                             <tr>
                                 <td>
@@ -183,8 +184,8 @@
 
             <div class="accordion box">
                 <button class="accordion-label">График платежей</button>
-                <div class="accordion-content profilepage-table profilepage-table__payment">
-                    <table cellspacing="0" cellpagging="0">
+                <div class="accordion-content ">
+                    <table cellspacing="0" cellpagging="0" class="profilepage-table profilepage-table__payment">
                         <thead>
                             <tr>
                                 <td>
@@ -323,6 +324,7 @@
         </div>
     </main>
 
+    <script src="js/modules/datepicker.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>
