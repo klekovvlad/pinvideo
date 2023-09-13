@@ -1,20 +1,24 @@
 export class Accordion {
     constructor(element) {
-        this.element = element;
-        this.button = this.element.querySelector('.accordion-label');
-        this.content = this.element.querySelector('.accordion-content');
-        this.contentHeight = this.content.scrollHeight;
+        if(element) {
+            this.element = element;
+            this.button = this.element.querySelector('.accordion-label');
+            this.content = this.element.querySelector('.accordion-content');
+            this.contentHeight = this.content.scrollHeight;
+        }
     }
 
     init() {
-        try {
-            this.openCheckAfterInit();
-            this.button.onclick = () => {
-                this.open();
+        if(this.element) {
+            try {
+                this.openCheckAfterInit();
+                this.button.addEventListener('click', () => {
+                    this.open()
+                })
             }
-        }
-        catch(error) {
-            console.log(`Произошла ошибка, возможно нет кнопки у аккордеона ${this.element.className} ${error}`)
+            catch(error) {
+                console.log(`Произошла ошибка, возможно нет кнопки у аккордеона ${this.element.className} ${error}`)
+            }
         }
     }
 

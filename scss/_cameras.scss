@@ -6,6 +6,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     padding: 16px 8px 16px 32px;
+    flex-grow: 1;
+
+    @include mobile {
+        padding: 16px 24px;
+    }
 
     &-top {
         display: flex;
@@ -63,8 +68,53 @@
         @include scrollbar();
         padding: 0px 24px 0px 0px;
 
-        &[data-filter="5,4,8"],
-        &[data-filter="4,4,8"] {
+        @include mobile {
+            padding: 0;
+        }
+    }
+
+    &-grid {
+        display: grid;
+        
+        &__2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+
+            @include mobile {
+                grid-template-columns: repeat(1, 1fr);
+
+                .camera {
+                    aspect-ratio: 8 / 5;
+                }
+            }
+        }
+
+        &__3 {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 16px;
+
+            @include mobile {
+                grid-template-columns: repeat(1, 1fr);
+
+                .camera {
+                    aspect-ratio: 8 / 5;
+                }
+            }
+        }
+
+        &__5 {
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 8px;
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 8px 16px;
+
+                .camera {
+                    height: 85px;
+                }
+            }
+
             .camera {
                 &-info {
                     padding: 3px;
@@ -74,16 +124,14 @@
                         text-align: center;
                         transform: translate(-50%, calc(-50% - 15px));
                         white-space: pre-wrap;
+
+                        @include mobile {
+                            transform: translate(-50%, calc(-50% - 10px));
+                        }
                     }
                 }
             }
         }
-    }
-
-    &-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 16px;
     }
 
     &-table {
@@ -216,6 +264,13 @@
         width: 16px;
         height: 16px;
         border-radius: 50%;
+
+        @include mobile {
+            width: 6px;
+            height: 6px;
+            top: 12px;
+            left: 12px;
+        }
     }
 
     &-open {
@@ -226,6 +281,13 @@
         width: 16px;
         background: url('../img/icons/full-screen-icon.svg') no-repeat center;
         background-size: contain;
+
+        @include mobile {
+            width: 6px;
+            height: 6px;
+            top: 12px;
+            right: 12px;
+        }
     }
 
     &-edit {
@@ -237,6 +299,11 @@
         height: 16px;
         background: url('../img/icons/erid-arrow-icon.svg') no-repeat center;
         background-size: cover;
+
+        @include mobile {
+            width: 6px;
+            height: 6px;
+        }
     }
 
     &[data-status=record] {
@@ -255,6 +322,11 @@
             color: var(--color-red);
             text-transform: uppercase;
             white-space: nowrap;
+
+            @include mobile {
+                font-size: 12px;
+            }
+            
         }
         .camera {
             &-status {

@@ -14,24 +14,31 @@ export const WORDS = {
 
 export const SETTINGS = {
     TABLES: {
-        4: [2, 2, 16],
-        6: [3, 2, 16],
-        16: [4, 4, 8],
-        20: [5, 4, 8]
+        DESKTOP: {
+            4: [2, 2, 16],
+            6: [3, 2, 16],
+            16: [4, 4, 8],
+            20: [5, 4, 8]
+        },
+        ADAPTIVE: {
+            2: [1, 2, 16],
+            4: [2, 2, 16],
+            6: [2, 3, 8]
+        }
+    },
+
+    CHECK_WIDTH() {
+        if(window.innerWidth < 768 ) {
+            return 'ADAPTIVE';
+        } else return 'DESKTOP';
     }
-}
-
-export const HINT = {
-    EDIT: 'Перейти к редактированию',
-    SCREEN: 'На полный экран'
-}
-
-export const STATUS = {
-    ERROR: 'Потеряно соединение',
 }
 
 export const SYSTEM_ERRORS = {
     POPUP: {
         NOT_FOUND: 'Такого поп-ап нет, проверьте корректность id'
+    },
+    FITLERS: {
+        TABLE_MASK: 'Ошибка во время генерации шаблонов'
     }
 }
