@@ -1059,8 +1059,36 @@ main.view {
   display: none;
   border-radius: 12px;
 }
+@media (max-width: 767px) {
+  .hint {
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+}
 .hint.active {
   display: block;
+}
+.hint::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--color-gray);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.hint__right::before {
+  left: 100%;
+  -webkit-transform: translate(-150%, -50%) rotate(-45deg);
+          transform: translate(-150%, -50%) rotate(-45deg);
+}
+.hint__left::before {
+  left: 0;
+  -webkit-transform: translate(150%, -50%) rotate(-45deg);
+          transform: translate(150%, -50%) rotate(-45deg);
 }
 
 .popup {
@@ -1294,6 +1322,7 @@ main.view {
   border: 1px solid var(--color-red);
   border-radius: 32px;
   width: 280px;
+  left: -50px !important;
 }
 .datepicker__header {
   padding: 16px 0px 8px;
@@ -1359,11 +1388,8 @@ main.view {
     font-size: 16px;
   }
 }
-.datepicker__cal tr td.datepicker__day:first-child.is-selected div {
-  border-radius: 50% 0% 0% 50%;
-}
-.datepicker__cal tr td.datepicker__day:last-child.is-selected div {
-  border-radius: 0% 50% 50% 0%;
+.datepicker__cal tr td.datepicker__day.is-selected div {
+  border-radius: 50%;
 }
 
 .login {
@@ -1978,13 +2004,12 @@ main.view {
 .view-wrapper {
   background: #fff;
   border: 1px solid var(--color-red);
-  overflow: hidden;
   border-radius: 28px;
   aspect-ratio: var(--aspect-ratio);
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0;
-  grid-template-rows: 1fr 150px;
+  grid-template-rows: 1fr 100px 50px;
 }
 @media (max-width: 968px) {
   .view-wrapper {
@@ -1996,11 +2021,12 @@ main.view {
   .view-wrapper {
     margin: 0;
     aspect-ratio: auto;
-    grid-template-rows: 1fr 200px;
+    grid-template-rows: 1fr 100px 100px;
   }
 }
 .view-content {
   background: var(--color-dark);
+  border-radius: 28px 28px 0px 0px;
 }
 @media (max-width: 767px) {
   .view-content {
@@ -2042,7 +2068,7 @@ main.view {
   padding: 76px 0px 10px;
   overflow: auto;
 }
-@media (768px < width < 968px) {
+@media (767px < width < 968px) {
   .view-timeline-wrapper {
     padding: 40px 0px 10px;
   }
@@ -2127,8 +2153,8 @@ main.view {
 .view-curent {
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -2209,7 +2235,7 @@ main.view {
     gap: 30px;
   }
 }
-@media (768px < width < 968px) {
+@media (767px < width < 968px) {
   .view-buttons {
     position: absolute;
     top: 12px;

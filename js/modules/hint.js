@@ -17,22 +17,26 @@ export const Hint = {
     listener() {
         this.elements.forEach(el => {
             el.onmouseenter = () => {
-                this.hint.classList.add('active');
                 this.hint.style.left = `${el.getBoundingClientRect().left}px`;
                 this.hint.style.top = `${el.getBoundingClientRect().top}px`;
                 this.hint.innerHTML = el.dataset.hint;
-                let diff = 0
+                let translateDif = el.offsetWidth / 2;
                 let padding = 64;
-                if(window.innerWidth < 768) {
+                if(window.innerWidth < 767) {
                     padding = 12
                 }
                 if((el.getBoundingClientRect().left + this.hint.offsetWidth) - padding > window.innerWidth) {
-                    diff = (window.innerWidth - (el.getBoundingClientRect().left + (this.hint.offsetWidth / 2))) - 32;
+                    this.hint.classList.add('hint__right');
+                    translateDif = -(this.hint.offsetWidth / 2) + 20;
+                }else if(el.getBoundingClientRect().left - (this.hint.offsetWidth / 2) < 0) {
+                    this.hint.classList.add('hint__left')
+                    translateDif = (this.hint.offsetWidth / 2) - 10
                 }
-                this.hint.style.transform = `translate(calc(-50% + ${((el.offsetWidth + diff) / 2)}px), calc(${el.offsetHeight}px + 10px))`
+                this.hint.style.transform = `translate(calc(-50% + ${(translateDif)}px), calc(${el.offsetHeight}px + 10px))`;
+                this.hint.classList.add('active');
             }
             el.onmouseleave = () => {
-                this.hint.classList.remove('active');
+                this.hint.className = 'hint';
             }
         })
     },

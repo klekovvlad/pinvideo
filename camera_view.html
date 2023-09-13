@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/datepicker.minimal.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Страница c редактирования камеры</title>
 </head>
@@ -95,52 +96,53 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="view-buttons">
-                    <button id="">
-                        <img src="img/icons/player/speed.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/volume.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/minus.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/plus.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/prev.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/play.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/next.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/target.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/live.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/calendar.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/download.svg" alt="">
-                    </button>
-                    <button id="">
-                        <img src="img/icons/player/photo.svg" alt="">
-                    </button>
-                    <button id="" data-hint="Выход из полноэкранного режима">
-                        <img src="img/icons/player/small.svg" alt="">
-                    </button>
-                </div>
+            </div>
+            
+            <div class="view-buttons">
+                <button id="" data-hint="Скорость воспроизведения">
+                    <img src="img/icons/player/speed.svg" alt="">
+                </button>
+                <button id="" data-hint="Громкость">
+                    <img src="img/icons/player/volume.svg" alt="">
+                </button>
+                <button id="">
+                    <img src="img/icons/player/minus.svg" alt="">
+                </button>
+                <button id="">
+                    <img src="img/icons/player/plus.svg" alt="">
+                </button>
+                <button id="" data-hint="Предидущий день">
+                    <img src="img/icons/player/prev.svg" alt="">
+                </button>
+                <button id="" data-hint="Воспроизведение">
+                    <img src="img/icons/player/play.svg" alt="">
+                </button>
+                <button id="" data-hint="Следующий день">
+                    <img src="img/icons/player/next.svg" alt="">
+                </button>
+                <button id="">
+                    <img src="img/icons/player/target.svg" alt="">
+                </button>
+                <button id="">
+                    <img src="img/icons/player/live.svg" alt="">
+                </button>
+                <button id="" class="check-date" data-hint="Выбрать день">
+                    <img src="img/icons/player/calendar.svg" alt="">
+                </button>
+                <button id="" data-hint="Скачать">
+                    <img src="img/icons/player/download.svg" alt="">
+                </button>
+                <button id="" data-hint="Скриншот">
+                    <img src="img/icons/player/photo.svg" alt="">
+                </button>
+                <button id="" data-hint="Выход из полноэкранного режима">
+                    <img src="img/icons/player/small.svg" alt="">
+                </button>
             </div>
         </div>
     </main>
 
+    <script src="js/modules/datepicker.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

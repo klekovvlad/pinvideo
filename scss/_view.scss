@@ -4,13 +4,12 @@
     &-wrapper {
         background: #fff;
         border: 1px solid var(--color-red);
-        overflow: hidden;
         border-radius: 28px;
         aspect-ratio: var(--aspect-ratio);
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 0;
-        grid-template-rows: 1fr 150px;
+        grid-template-rows: 1fr 100px 50px;
 
         @include pre-mob {
             margin-right: 140px;
@@ -20,12 +19,13 @@
         @include mobile {
             margin: 0;
             aspect-ratio: auto;
-            grid-template-rows: 1fr 200px;
+            grid-template-rows: 1fr 100px 100px;
         }
     }
 
     &-content {
         background: var(--color-dark);
+        border-radius: 28px 28px 0px 0px;
 
         @include mobile {
             aspect-ratio: var(--aspect-ratio);
@@ -62,7 +62,7 @@
             padding: 76px 0px 10px;
             overflow: auto;
 
-            @media (768px < width < 968px) {
+            @media (767px < width < 968px) {
                 padding: 40px 0px 10px;
             }
             
@@ -153,7 +153,7 @@
     &-curent {
         position: absolute;
         top: 50%;
-        transform: translate(0, -50%);
+        transform: translate(-50%, -50%);
         width: 26px;
         height: 26px;
         border-radius: 50%;
@@ -220,7 +220,7 @@
             gap: 30px;
         }
 
-        @media (768px < width < 968px) {
+        @media (767px < width < 968px) {
             position: absolute;
             top: 12px;
             right: 12px;

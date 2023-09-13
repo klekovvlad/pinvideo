@@ -10,7 +10,38 @@
     display: none;
     border-radius: 12px;
 
+    @include mobile {
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 6px 8px;
+    }
+
     &.active {
         display: block;
+    }
+
+    &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: var(--color-gray);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &__right {
+        &::before {
+            left: 100%;
+            transform: translate(-150%, -50%) rotate(-45deg);
+        }
+    }
+
+    &__left {
+        &::before {
+            left: 0;
+            transform: translate(150%, -50%) rotate(-45deg);
+        }
     }
 }
