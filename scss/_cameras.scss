@@ -6,6 +6,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     padding: 16px 8px 16px 32px;
+    flex-grow: 1;
 
     &-top {
         display: flex;
@@ -62,9 +63,25 @@
         height: 100%;
         @include scrollbar();
         padding: 0px 24px 0px 0px;
+    }
 
-        &[data-filter="5,4,8"],
-        &[data-filter="4,4,8"] {
+    &-grid {
+        display: grid;
+        
+        &__2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+
+        &__3 {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 16px;
+        }
+
+        &__5 {
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 8px;
+
             .camera {
                 &-info {
                     padding: 3px;
@@ -78,12 +95,6 @@
                 }
             }
         }
-    }
-
-    &-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 16px;
     }
 
     &-table {
