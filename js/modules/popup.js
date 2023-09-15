@@ -8,6 +8,7 @@ export const Popup = {
             this.buttons.forEach(button => {
                 button.onclick = () => {
                     try {
+                        this.removeOpenClass()
                         const popup = document.querySelector(`#${button.dataset.popup}`)
                         if(!popup.classList.contains('open')) {
                             popup.classList.add('open')
@@ -30,4 +31,8 @@ export const Popup = {
             }
         })
     },
+
+    removeOpenClass() {
+        document.querySelectorAll('.popup').forEach(popup => popup.classList.remove('open'))
+    }
 }

@@ -1,0 +1,79 @@
+.profile {
+    &-data {
+        @include flexCol(64px);
+        padding: 32px calc((100% - 546px) / 2);
+
+        @include mobile {
+            padding: 32px 24px;
+            gap: 32px;
+        }
+        
+
+        .subtitle {
+            text-align: center;
+        }
+
+        &-wrapper {
+            @include flexCol(32px);
+
+            @include mobile {
+                gap: 16px;
+            }
+    
+            .subtitle {
+                padding: 0px 0px 32px;
+                border-bottom: 1px solid var(--color-border);
+
+                @include mobile {
+                    padding: 0px 0px 16px;
+                }
+            }
+
+            .input-row {
+                align-items: end;
+                gap: 32px;
+                
+                @include mobile {
+                    flex-direction: column;
+                    align-items: stretch;
+                    gap: 14px;
+                }
+
+                .input-wrapper {
+                    flex-basis: calc(100% - (162px + 32px));
+
+                    @include mobile {
+                        flex-basis: 100%;
+                    }
+                }
+
+                .button {
+                    width: 162px;
+                }
+            }
+        }
+
+        .accordion {
+            &-label {
+                cursor: pointer;
+                justify-content: center;
+            }
+
+            &.open {
+                .accordion-label {
+                    margin: 0px 0px 32px;
+                    padding: 0px 0px 32px;
+                    border-bottom: 1px solid var(--color-border);
+                }
+            }
+
+            &-content {
+                .button {
+                    margin: 0px auto;
+                }
+            }
+        }
+    }
+
+
+}
