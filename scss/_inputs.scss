@@ -10,6 +10,8 @@
         .input-number {
             input[type=text],
             input[type=tel],
+            input[type=email],
+            input[type=number],
             textarea {
                 border: 1px solid var(--color-red);
             }
@@ -36,6 +38,7 @@
 
             input[type=text],
             input[type=tel],
+            input[type=email],
             input[type=password],
             textarea {
                 border-radius: 5px;

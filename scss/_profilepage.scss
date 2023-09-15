@@ -89,6 +89,17 @@
         @include flexCol(32px);
         font-weight: 300;
 
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            
+            @include mobile {
+                flex-direction: column;
+            }
+        }
+
         @include mobile {
             gap: 16px;
         }

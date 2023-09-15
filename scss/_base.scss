@@ -27,10 +27,7 @@ main {
 
     @include pre-mob {
         min-height: calc(100dvh - 43px);
-        
-        &:not(.cameraspage) {
-            max-height: max-content;
-        }
+        max-height: max-content;
     }
 
     &:not(.login) {
@@ -55,6 +52,18 @@ main {
         padding: 16px 64px 64px;
 
         @include pre-mob {
+            padding: 12px;
+        }
+    }
+
+    &.profile {
+        padding: 16px calc((100% - 1056px) / 2) ;
+        max-height: max-content;
+        @media(width < 1056px) {
+            padding: 16px 64px;
+        }
+
+        @include mobile {
             padding: 12px;
         }
     }

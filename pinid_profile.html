@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/datepicker.minimal.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Страница c камерой</title>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="/" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>
+
+    <main class="profile">
+        <div class="profilepage-verification profilepage-verification__success box">
+            <div class="title">Аккаунт верифицирован</div>
+        </div>
+
+        <div class="profile-data box">
+            <div class="subtitle gray">Данные аккаунта</div>
+
+            <div class="profile-data-wrapper">
+                <div class="subtitle">Информация</div>
+
+                <div class="input-row">
+                    <div class="input-wrapper">
+                        <div class="input-label">Имя:</div>
+                        <div class="input-item">
+                            <input type="text" placeholder="Ваше имя">
+                        </div>
+                    </div>
+
+                    <button class="button button-dark">Сохранить</button>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-wrapper">
+                        <div class="input-label">Телефон:</div>
+                        <div class="input-item">
+                            <input type="tel" placeholder="+79012345678">
+                        </div>
+                    </div>
+
+                    <button class="button button-blue" data-popup="change-phone">Изменить</button>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-wrapper">
+                        <div class="input-label">Email:</div>
+                        <div class="input-item">
+                            <input type="email" placeholder="Email@.com">
+                        </div>
+                    </div>
+
+                    <button class="button button-blue" data-popup="popup-pincode">Изменить</button>
+                </div>
+
+
+
+            </div>
+
+            <div class="profile-data-wrapper">
+                <div class="subtitle">Изменить пароль</div>
+
+                <div class="input-row">
+                    <div class="input-wrapper input-password">
+                        <div class="input-label">Старый пароль <span class="required">*</span>:</div>
+                        <div class="input-item">
+                            <input type="password" placeholder="******">
+                            <button class="input-password-show"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-wrapper input-password">
+                        <div class="input-label">Новый пароль <span class="required">*</span>:</div>
+                        <div class="input-item">
+                            <input type="password" placeholder="******">
+                            <button class="input-password-show"></button>
+                        </div>
+                        <button class="small" data-popup="password-forgot">Забыли пароль?</button>
+                    </div>
+
+                    <button class="button button-blue">Изменить</button>
+                </div>
+
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-label">Удалить аккаунт</div>
+                <div class="accordion-content">
+                    <button class="button button-red" data-popup="delete">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="popup popup-pincode" id="change-phone">
+        <div class="popup-pincode-body box">
+            <div class="title">Изменение номера телефона</div>
+            <div class="subtitle gray">Старый номер</div>
+            <div class="subtitle">+79012345678</div>
+
+            <div class="pincode input-wrapper">
+                <input type="number" id="pincode-input-1">
+                <input type="number" id="pincode-input-2">
+                <input type="number" id="pincode-input-3">
+                <input type="number" id="pincode-input-4">
+            </div>
+
+            <div class="desc">Укажите последние 4 цифры номера входящего вызова</div>
+
+            <div class="buttons buttons-column">
+                <button class="button button-dark" data-popup="change-phone-new">Отправить</button>
+                <button class="button button-blue button-disabled">Получить код повторно</button>
+                <button class="button button-light" data-popup="change-phone-email">Подтвердить через email</button>
+            </div>
+
+            <div class="small">Получить новый код можно через 00:59</div>
+        </div>
+    </div>
+
+    <div class="popup" id="change-phone-new">
+        <div class="popup-body box">
+            <div class="title">Изменение номера телефона</div>
+            <div class="input-wrapper">
+                <div class="input-label">Новый номер:</div>
+                <div class="input-item">
+                    <input type="tel" placeholder="+79087654321">
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button button-blue" data-popup="change-phone-success">Далее</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-pincode" id="change-phone-success">
+        <div class="popup-pincode-body box">
+            <div class="title">Изменение номера телефона</div>
+            <div class="subtitle gray">Новый номер</div>
+            <div class="subtitle">+79012345678</div>
+
+            <div class="pincode input-wrapper">
+                <input type="number" id="pincode-input-1">
+                <input type="number" id="pincode-input-2">
+                <input type="number" id="pincode-input-3">
+                <input type="number" id="pincode-input-4">
+            </div>
+
+            <div class="desc">Укажите последние 4 цифры номера входящего вызова</div>
+
+            <div class="buttons buttons-column">
+                <button class="button button-dark popup-close">Отправить</button>
+                <button class="button button-blue button-disabled">Получить код повторно</button>
+                <button class="button button-light" data-popup="change-phone-new">Изменить номер</button>
+            </div>
+
+            <div class="small">Получить новый код можно через 00:59</div>
+        </div>
+    </div>
+
+    <div class="popup popup-pincode" id="change-phone-email">
+        <div class="popup-pincode-body box">
+            <div class="title">Изменение номера телефона</div>
+            <div class="subtitle gray">Код отправлен на Email@.com</div>
+
+            <div class="pincode input-wrapper">
+                <input type="number" id="pincode-input-1">
+                <input type="number" id="pincode-input-2">
+                <input type="number" id="pincode-input-3">
+                <input type="number" id="pincode-input-4">
+            </div>
+
+            <div class="desc">Укажите код из сообщения</div>
+
+            <div class="buttons buttons-column">
+                <button class="button button-dark popup-close">Отправить</button>
+                <button class="button button-blue button-disabled">Получить код повторно</button>
+            </div>
+
+            <div class="small">Получить новый код можно через 00:59</div>
+        </div>
+    </div>
+
+    <div class="popup" id="delete">
+        <div class="popup-body box">
+            <div class="title">Подтвердите удаление</div>
+            <div class="buttons">
+                <button class="button button-red">Удалить</button>
+                <button class="button button-light popup-close">Отменить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="password-forgot">
+        <div class="popup-body box">
+            <div class="title">Восстановление пароля</div>
+            <div class="input-wrapper">
+                <div class="input-label">Введите адрес электронной почты <span class="required">*</span> :</div>
+                <div class="input-item">
+                    <input type="text" placeholder="Email@.com">
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button button-blue" data-popup="password-forgot-success">Далее</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="password-forgot-success">
+        <div class="popup-body box">
+            <div class="title">Сообщение для сброса пароля отправлено</div>
+            <div class="desc">Сообщение было отправлено на адрес E****@.com. Следуйте инструкции в сообщении, чтобы спросить пароль.</div>
+            <div class="buttons">
+                <button class="button button-blue popup-close">Готово</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
