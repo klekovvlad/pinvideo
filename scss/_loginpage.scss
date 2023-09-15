@@ -47,6 +47,12 @@
         padding: 60px calc((100% - 368px) / 2) 0px;
         text-align: center;
 
+        &-center {
+            align-items: center;
+            justify-content: center;
+            padding-top: 0;
+        }
+        
         @include mobile {
             gap: 16px;
             padding: 60px 32px;
@@ -62,6 +68,10 @@
             align-items: center;
             justify-content: center;
             gap: 64px;
+
+            @include mobile {
+                gap: 16px;
+            }
         }
 
         &-button {
@@ -131,11 +141,18 @@
 
             &-link {
                 flex: 0 0 48px;
+                width: 48px;
+                height: 48px;
                 border: 1px solid var(--color-border);
                 border-radius: 8px;
                 padding: 10px;
-                aspect-ratio: 1 / 1;
                 display: inline-block;
+
+                img {
+                    height: 24px;
+                    object-fit: contain;
+                    object-position: center;
+                }
             }
 
             .accordion {

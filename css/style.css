@@ -10,6 +10,7 @@ img {
 }
 
 button {
+  color: inherit;
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
@@ -126,8 +127,6 @@ main {
 @media (max-width: 968px) {
   main {
     min-height: calc(100dvh - 43px);
-  }
-  main:not(.cameraspage) {
     max-height: -webkit-max-content;
     max-height: -moz-max-content;
     max-height: max-content;
@@ -212,6 +211,8 @@ main.profile {
   .header {
     padding: 6px 24px;
     grid-gap: 16px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 .header-nav {
@@ -245,6 +246,40 @@ main.profile {
   .header-nav-link {
     font-size: 14px;
     text-underline-offset: 2px;
+  }
+}
+.header-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+@media (width < 1440px) {
+  .header-error {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    margin: 0px auto;
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .header-error {
+    -webkit-box-ordinal-group: 1001;
+        -ms-flex-order: 1000;
+            order: 1000;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -1723,6 +1758,15 @@ main.profile {
   padding: 60px calc((100% - 368px) / 2) 0px;
   text-align: center;
 }
+.login-form-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 0;
+}
 @media (max-width: 767px) {
   .login-form {
     gap: 16px;
@@ -1744,6 +1788,11 @@ main.profile {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 64px;
+}
+@media (max-width: 767px) {
+  .login-form-buttons {
+    gap: 16px;
+  }
 }
 .login-form-button {
   font-size: 26px;
@@ -1832,11 +1881,19 @@ main.profile {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 48px;
           flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 10px;
-  aspect-ratio: 1/1;
   display: inline-block;
+}
+.login-form-outside-link img {
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .login-form-outside .accordion-label.login-form-outside-button {
   margin: 8px auto 0px;
@@ -1872,6 +1929,12 @@ main.profile {
 @media (max-width: 767px) {
   .cameras {
     padding: 16px 24px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
   }
 }
 .cameras-top {
@@ -1964,6 +2027,7 @@ main.profile {
 @media (max-width: 767px) {
   .cameras-wrapper {
     padding: 0;
+    height: 368px;
   }
 }
 .cameras-grid {
@@ -1972,14 +2036,6 @@ main.profile {
 .cameras-grid__2 {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
-}
-@media (max-width: 767px) {
-  .cameras-grid__2 {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .cameras-grid__2 .camera {
-    aspect-ratio: 8/5;
-  }
 }
 .cameras-grid__3 {
   grid-template-columns: repeat(3, 1fr);
@@ -1991,6 +2047,26 @@ main.profile {
   }
   .cameras-grid__3 .camera {
     aspect-ratio: 8/5;
+  }
+}
+@media (max-width: 767px) {
+  .cameras-grid__2, .cameras-grid__3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cameras-grid__2 .camera, .cameras-grid__3 .camera {
+    height: 176px;
+  }
+  .cameras-grid__2 .camera-status, .cameras-grid__3 .camera-status {
+    top: 16px;
+    left: 16px;
+  }
+  .cameras-grid__2 .camera-open, .cameras-grid__3 .camera-open {
+    top: 16px;
+    right: 16px;
+  }
+  .cameras-grid__2 .camera-edit, .cameras-grid__2 .camera-open, .cameras-grid__2 .camera-status, .cameras-grid__3 .camera-edit, .cameras-grid__3 .camera-open, .cameras-grid__3 .camera-status {
+    width: 12px;
+    height: 12px;
   }
 }
 .cameras-grid__5 {
@@ -2932,6 +3008,26 @@ main.profile {
   gap: 32px;
   font-weight: 300;
 }
+.profilepage-verification-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  .profilepage-verification-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 @media (max-width: 767px) {
   .profilepage-verification {
     gap: 16px;
@@ -3148,6 +3244,13 @@ main.profile {
       -ms-flex-align: end;
           align-items: end;
   gap: 32px;
+}
+@media (width > 767px) {
+  .profile-data-wrapper .input-row:has(.error), .profile-data-wrapper .input-row:has(.small) {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 @media (max-width: 767px) {
   .profile-data-wrapper .input-row {

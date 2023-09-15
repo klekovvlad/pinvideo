@@ -32,6 +32,13 @@
             .input-row {
                 align-items: end;
                 gap: 32px;
+
+                @media (width > 767px) {
+                    &:has(.error),
+                    &:has(.small) {
+                        align-items: center;
+                    }
+                }
                 
                 @include mobile {
                     flex-direction: column;

@@ -10,6 +10,8 @@
 
     @include mobile {
         padding: 16px 24px;
+        height: max-content;
+        flex-grow: 0;
     }
 
     &-top {
@@ -71,6 +73,7 @@
 
         @include mobile {
             padding: 0;
+            height: 368px;
         }
     }
 
@@ -79,6 +82,12 @@
         
         &__2 {
             grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+
+
+        &__3 {
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: 16px;
 
             @include mobile {
@@ -90,15 +99,30 @@
             }
         }
 
-        &__3 {
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 16px;
-
-            @include mobile {
+        @include mobile {
+            &__2,
+            &__3 {
                 grid-template-columns: repeat(1, 1fr);
 
                 .camera {
-                    aspect-ratio: 8 / 5;
+                    height: calc((368px - 16px) / 2);
+    
+                    &-status {
+                        top: 16px;
+                        left: 16px;
+                    }
+    
+                    &-open {
+                        top: 16px;
+                        right: 16px;
+                    }
+
+                    &-edit,
+                    &-open,
+                    &-status {
+                        width: 12px;
+                        height: 12px;
+                    }
                 }
             }
         }
