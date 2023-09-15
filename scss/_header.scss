@@ -12,7 +12,10 @@
     @include pre-mob {
         padding: 6px 24px;
         grid-gap: 16px;
-        flex-wrap: wrap;
+        
+        &:has(.header-error) {
+            flex-wrap: wrap;
+        }
     }
 
     &-nav {
