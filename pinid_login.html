@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Страница входа</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>
+
+    <main class="login">
+        <img src="img/pinid_logo.png" alt="pinvideo logo" class="login-img">
+        <div class="login-form tabs">
+            <div class="title">Добро пожаловать</div>
+           
+            <div class="login-form-buttons tab-buttons">
+                <button class="login-form-button active" data-tab="login">Вход</button>
+                <button class="login-form-button" data-tab="register">Регистрация</button>
+            </div>
+
+            <div class="tab-contents">
+                <div class="login-form-content active" id="login">
+
+                    <form action="" class="login-form-inputs">
+                        <div class="input-wrapper">
+                            <div class="input-label">Телефон или почта:</div>
+                            <div class="input-item">
+                                <input type="text" placeholder="Email@.com">
+                            </div>
+                        </div>
+                        <div class="input-wrapper input-password">
+                            <div class="input-label">Пароль:</div>
+                            <div class="input-item">
+                                <input type="password" placeholder="******">
+                                <button class="input-password-show"></button>
+                            </div>
+                            
+                        </div>
+                    </form>
+    
+                    <div class="input-check">
+                        <input type="checkbox" id="remind">
+                        <label for="remind">Запомнить меня</label>
+                    </div>
+    
+                    <button class="button button-dark">Далее</button>
+                </div>
+    
+                <div class="login-form-content" id="register">
+                    <div class="input-wrapper">
+                        <div class="input-label">Телефон или почта:</div>
+                        <div class="input-item">
+                            <input type="text" placeholder="Email@.com">
+                        </div>
+                    </div>
+    
+                    <button class="button button-dark" data-popup="login-pincode">Получить код</button>
+                </div>
+            </div>
+
+            <div class="login-form-outside">
+                <div class="subtitle">Войти через</div>
+
+                <div class="accordion">
+                    <div class="accordion-content login-form-outside-links">
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                        <a href="" class="login-form-outside-link"></a>
+                    </div>
+    
+                    <button class="login-form-outside-button accordion-label">Показать все</button>
+                </div>
+            </div>
+
+            <div class="login-pincode" id="login-pincode">
+                <div class="login-pincode-body box">
+                    <div class="title">Авторизация</div>
+                    <div class="subtitle gray">Вход по номеру телефона</div>
+                    <div class="subtitle">+79012345678</div>
+
+                    <div class="pincode input-wrapper">
+                        <input type="number" id="pincode-input-1">
+                        <input type="number" id="pincode-input-2">
+                        <input type="number" id="pincode-input-3">
+                        <input type="number" id="pincode-input-4">
+                    </div>
+
+                    <div class="desc">Укажите последние 4 цифры номера входящего вызова</div>
+
+                    <div class="buttons buttons-column">
+                        <button class="button button-dark">Отправить</button>
+                        <button class="button button-blue button-disabled">Получить код повторно</button>
+                    </div>
+
+                    <div class="small">Получить новый код можно через 00:59</div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Pinvideo © 2023
+        </div>
+    </main>
+
+    <div class="cookie">
+        <p class="desc">
+            Этот сайт использует cookie для хранения данных. <br>
+            Продолжая использовать сайт, Вы даете согласие на работу с этими файлами.
+        </p>
+        <button class="button button-blue cookie-accept">Принять и закрыть</button>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.pincode {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    gap: 8px;
+    margin: 0px auto;
+
+    input[type=number] {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 56px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        font-size: 40px;
+        appearance: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}

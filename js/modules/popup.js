@@ -24,7 +24,7 @@ export const Popup = {
 
     popupListener(popup) {
         popup.addEventListener('click', function open(e) {
-            if(e.target.classList.contains('popup') || e.target.classList.contains('popup-close')) {
+            if(e.target.id === popup.id || e.target.classList.contains('popup-close')) {
                 popup.classList.remove('open')
                 popup.removeEventListener('click', open, false)
             }

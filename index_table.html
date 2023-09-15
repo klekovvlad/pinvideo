@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Главная страница</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="/" class="logo"></a>
+        <nav class="header-nav">
+            <a href="" class="header-nav-link">Видеопотоки</a>
+        </nav>
+        <div class="user">
+            <div class="user-curent">Person</div>
+            <div class="user-menu">
+                <div class="user-item user-item__active">
+                    <div class="user-name">Person</div>
+                    <div class="user-email">Email@.com</div>
+                </div>
+                <ul class="user-list">
+                    <li class="user-item user-item__curent">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-name">Person</div>
+                        <div class="user-email">Email@.com</div>
+                    </li>
+                </ul>
+                <button class="button button-dark">Открыть профиль</button>
+                <a href="#" class="button button-blue">Перейти в pin ID</a>
+                <button class="button button-light">Добавить профиль</button>
+                <button class="button button-red">Выйти из профиля</button>
+            </div>
+        </div>
+
+        <a href="#" class="help"></a>
+
+    </header>   
+    
+    <main class="cameraspage">
+        <div class="filters box">
+            <button class="filters-button accordion-label">Фильтр</button>
+            <div class="filters-wrapper accordion-content">
+                <div class="input-wrapper">
+                    <div class="input-label">Сортировать по тарифу:</div>
+                    <div class="input-item input-item-drop input-item-options input-item-search">
+                        <input type="text" placeholder="Введите или выберите из списка">
+                        <div class="drop-list-wrapper">
+                            <ul class="drop-list">
+                                <li class="drop-item">Free</li>
+                                <li class="drop-item">Standard</li>
+                                <li class="drop-item">Premium</li>
+                                <li class="drop-item">Professional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="input-label">Сортировка по тегам:</div>
+                    <div class="input-item input-item-drop input-item-options input-item-search">
+                        <input type="text" placeholder="Введите или выберите из списка">
+                        <div class="drop-list-wrapper">
+                            <ul class="drop-list">
+                                <li class="drop-item">Free</li>
+                                <li class="drop-item">Standard</li>
+                                <li class="drop-item">Premium</li>
+                                <li class="drop-item">Professional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="input-label">Количество камер на странице:</div>
+                    <div class="input-item input-item-drop filters-table">
+                        <input type="text" placeholder="Выберите из списка">
+                        <div class="drop-list-wrapper">
+                            <ul class="drop-list">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="input-label">Статус:</div>
+                    <div class="input-item input-item-drop">
+                        <input type="text" placeholder="Все">
+                        <div class="drop-list-wrapper">
+                            <ul class="drop-list">
+                                <li class="drop-item">Free</li>
+                                <li class="drop-item">Standard</li>
+                                <li class="drop-item">Premium</li>
+                                <li class="drop-item">Professional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="input-label">Доступ к камере:</div>
+                    <div class="input-item input-item-drop">
+                        <input type="text" placeholder="Все">
+                        <div class="drop-list-wrapper">
+                            <ul class="drop-list">
+                                <li class="drop-item">Free</li>
+                                <li class="drop-item">Standard</li>
+                                <li class="drop-item">Premium</li>
+                                <li class="drop-item">Professional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="button button-dark">Применить</button>
+                    <button class="button button-light">Отменить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cameras box">
+            <div class="cameras-top">
+                <button data-popup="add_camera" class="button button-blue">Добавить камеру</button>
+                <div class="title">Видеопотоки</div>
+                <div class="cameras-view-buttons">
+                    <button data-view="grid">
+                        <img src="img/icons/grid-icon.svg" alt="">
+                    </button>
+                    <button data-view="table">
+                        <img src="img/icons/table-icon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="cameras-wrapper">
+                <table class="cameras-table" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Теги</td>
+                            <td>Запись</td>
+                            <td>Время архива</td>
+                            <td>Глубина архива</td>
+                            <td>Тариф</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="record">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                        <tr data-status="record">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                        <tr data-status="record">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                        <tr data-status="record">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                        <tr data-status="record">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                        <tr data-status="error">
+                            <td>
+                                Камера 1
+                                <a href="#" class="camera-edit" data-hint="Перейти к редактированию"></a>
+                            </td>
+                            <td>teg1, teg2, teg3, teg4</td>
+                            <td>Вкл</td>
+                            <td>2 часа</td>
+                            <td>1 день</td>
+                            <td>Standard</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="popup" id="add_camera">
+        <div class="popup-body box">
+            <div class="title">Добавить видеопоток</div>
+
+            <div class="input-wrapper">
+                <div class="input-label">Добавьте источник видеопотока, чтобы его проверить. Это может быть ссылка на любой видеопоток, например: rtsp://login:password@192.168.1.12/stream1</div>
+                <div class="input-item">
+                    <input type="text" placeholder="rtsp://login:password@192.168.1.12/stream1">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-blue">Проверить</button>
+                <button class="button button-light popup-close">Отменить</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

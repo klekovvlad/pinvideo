@@ -8,7 +8,7 @@ export class Fitlers extends Accordion {
     }
 
     listener(cameras) {
-        if(this.element) {
+        if(cameras.grid) {
             this.button.addEventListener('click', () => {
                 cameras.wrapper.classList.add('loader')
                 setTimeout(() => {

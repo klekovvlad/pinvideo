@@ -1,0 +1,13 @@
+.tabs {
+    .tab-contents > * {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &.login-form-content.active {
+            display: flex;
+        }
+    }
+}

@@ -1,10 +1,12 @@
 import { Accordion } from "./modules/accordion.js";
 import Cameras from "./modules/cameras.js";
+import { Cookie } from "./modules/cookie.js";
 import { DropItem } from "./modules/drop.js";
 import { Fitlers } from "./modules/filters.js";
 import { Hint } from "./modules/hint.js";
-import { InputsNumbers, inputDrop } from "./modules/inputs.js";
+import { Input, InputsNumbers, inputDrop } from "./modules/inputs.js";
 import { Popup } from "./modules/popup.js";
+import { Tab } from "./modules/tabs.js";
 import { userMenu } from "./modules/userMenu.js";
 
 userMenu.listener();
@@ -13,6 +15,7 @@ inputDrop.init()
 InputsNumbers.init();
 Popup.listener();
 DropItem.init();
+Cookie.init();
 
 document.querySelectorAll('.accordion').forEach(accodrion => {
     const AccordionElement = new Accordion(accodrion);
@@ -39,5 +42,21 @@ if(datePickerButtons.length > 0) {
         const datePicker = new Datepicker(button, {
             multiple: true,
         })
+    })
+}
+
+const tabs = document.querySelectorAll('.tabs');
+if(tabs.length > 0) {
+    tabs.forEach(tab => {
+        const tabElement = new Tab(tab)
+        tabElement.listener()
+    })
+}
+
+const inputs = document.querySelectorAll('.input-wrapper')
+if(inputs.length > 0) {
+    inputs.forEach(input => {
+        const inputEl = new Input(input)
+        inputEl.init();
     })
 }

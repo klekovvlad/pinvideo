@@ -36,6 +36,7 @@
 
             input[type=text],
             input[type=tel],
+            input[type=password],
             textarea {
                 border-radius: 5px;
                 border: 1px solid var(--color-border);
@@ -268,5 +269,28 @@
     &-next {
         right: 8px;
         transform: translate(0, -50%) rotate(-90deg);
+    }
+}
+
+.input-password {
+    &-show {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 12px;
+        bottom: 50%;
+        transform: translate(0, 50%);
+        background-image: url('../img/icons/password-close-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &-close {
+        background-image: url('../img/icons/password-open-icon.svg');
+    }
+
+    .input-item {
+        position: relative;
     }
 }

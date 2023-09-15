@@ -1,0 +1,35 @@
+.cookie {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    z-index: 5;
+    background: var(--color-lightbg);
+    padding: 16px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, 50px);
+    transition: opacity .3s linear, transform .3s linear;
+    gap: 16px;
+
+    @include mobile {
+        bottom: 0;
+        padding: 16px 24px;
+        flex-direction: column;
+        align-items: stretch;
+        z-index: 7;
+
+        .button {
+            margin: 0px auto;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+}
