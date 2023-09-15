@@ -25,6 +25,11 @@
     &-red {
         background: var(--color-red);
     }
+
+    &-disabled {
+        pointer-events: none;
+        background: var(--color-disabled);
+    }
 }
 
 .buttons {

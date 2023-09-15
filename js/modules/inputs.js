@@ -164,3 +164,76 @@ export const inputDrop = {
         }
     }   
 }
+
+
+export class Input {
+    constructor(element) {
+        this.element = element;
+    }
+
+    init() {
+        if(this.element.classList.contains('pincode')) {
+            pincodeInput.listener(this.element)
+        }
+        if(this.element.classList.contains('input-password')) {
+            passwordInput.listener(this.element)
+        }
+    }
+}
+
+
+const pincodeInput = {
+    
+    listener(wrapper) {
+        const inputs = wrapper.querySelectorAll('input')
+        
+        wrapper.addEventListener('click', () => {
+            for(let i = 0; i < inputs.length; i++) {
+                if(inputs[i].value === '') {
+                    inputs[i].focus()
+                    return true
+                }
+            }
+        })
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('keyup', (e) => {
+                if(e.key !== 'Backspace') {
+                    if(index < inputs.length - 1) {
+                        inputs[index + 1].focus()
+                    }
+                    if(input.value.length > 1) {
+                        input.value = e.key
+                    }
+                }else{
+                    if(index > 0) {
+                        inputs[index - 1].value = ''
+                        inputs[index - 1].focus()
+                    }
+                }
+            })
+        })
+    }
+}
+
+
+const passwordInput = {
+    listener(wrapper) {
+        const button = wrapper.querySelector('.input-password-show');
+        const input = wrapper.querySelector('input');
+
+        wrapper.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if(e.target === button) {
+                if(button.classList.contains('input-password-close')) {
+                    input.type = 'password'
+                    button.classList.remove('input-password-close')
+                }else{
+                    input.type = 'text';
+                    button.classList.add('input-password-close')
+                }
+            }
+        })
+    }
+}

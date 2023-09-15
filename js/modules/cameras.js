@@ -4,13 +4,15 @@ class Cameras {
             this.element = element;
             this.wrapper = this.element.querySelector('.cameras-wrapper')
             this.grid = this.element.querySelector('.cameras-grid');
+        }
+        if(this.grid) {
             this.cameras = this.grid.querySelectorAll('.camera')
         }
     }
 
     init() {
         try {
-            if(this.wrapper) {
+            if(this.grid) {
                 this.changeHeight()
             }
         }

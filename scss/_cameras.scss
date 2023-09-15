@@ -21,6 +21,7 @@
         @include mobile {
             flex-wrap: wrap;
             gap: 16px;
+            padding: 0px 0px 16px 0px;
         }
 
         .title {
@@ -144,6 +145,11 @@
                     padding: 10px 10px;
                     border-bottom: 1px solid var(--color-border);
 
+                    @include mobile {
+                        white-space: nowrap;
+                        font-size: 16px;
+                    }
+
                     &:first-child {
                         padding: 10px 10px 10px 0px;
                     }
@@ -152,6 +158,11 @@
                         padding: 10px 0px 10px 10px;
                     }
                 }
+
+                // @include mobile {
+                //     display: grid;
+                //     grid-template-columns: repeat(2,);
+                // }
             }
         }
 
@@ -159,6 +170,28 @@
             tr {
                 td {
                     padding: 8px 10px;
+
+                    @include mobile {
+                        white-space: nowrap;
+                        font-size: 14px;
+                    }
+
+                    .camera-edit {
+                        flex: 0 0 16px;
+                        position: relative;
+                        display: inline-block;
+                        right: 0;
+                        top: 0;
+                        transform: translate(0, 0);
+                        margin-left: 60px;
+
+                        @include mobile {
+                            margin-left: 0;
+                            flex: 0 0 14px;
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
 
                     &:first-child {
                         padding: 8px 10px 8px 0px;
@@ -169,53 +202,43 @@
                     }
 
                     &:first-child {
-                        a {
-                            display: flex;
-                            align-items: center;
-                            justify-content: start;
-                            gap: 16px;
-                            width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        gap: 16px;
 
-                            &::before,
-                            &::after {
-                                content: '';
-                                display: inline-block;
-                                width: 16px;
-                                height: 16px;
+                        &::before {
+                            flex: 0 0 16px;
+                            content: '';
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+
+                            @include mobile {
+                                flex: 0 0 14px;
+                                width: 14px;
+                                height: 14px;
                             }
+                        }
+                    }
+                }
 
+                &[data-status="record"] {
+                    td {
+                        &:first-child {
                             &::before {
-                                border-radius: 50%;
-                            }
-
-                            &::after {
-                                background: url('../img/icons/erid-arrow-icon.svg') no-repeat center;
-                                background-size: contain;
-                                margin-left: auto;
+                                background: var(--color-green);
                             }
                         }
                     }
                 }
 
-                &.record {
+                &[data-status="error"] {
                     td {
                         &:first-child {
-                            a {
-                                &::before {
-                                    background: var(--color-green);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                &.error {
-                    td {
-                        &:first-child {
-                            a {
-                                &::before {
-                                    background: var(--color-red);
-                                }
+                            &::before {
+                                background: var(--color-red);
                             }
                         }
                     }

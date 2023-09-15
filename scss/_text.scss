@@ -3,12 +3,34 @@
     font-weight: 400;
 
     @include mobile {
+        font-size: 24px;
+    }
+}
+
+.subtitle {
+    font-size: 26px;
+    font-weight: 300;
+
+    @include mobile {
         font-size: 18px;
     }
 }
 
+.gray {
+    color: var(--color-gray);
+}
+
 .desc {
     font-weight: 300;
+}
+
+.small {
+    font-size: 16px;
+    color: var(--color-gray);
+
+    @include mobile {
+        font-size: 14px;
+    }
 }
 
 .for-payment {
