@@ -1,0 +1,148 @@
+main.projects {
+    position: relative;
+    padding: 0px calc((100% - 1400px) / 2) 64px;
+    max-height: max-content;
+
+    @media (width < 1400px) {
+        padding: 0px 64px 64px;
+    }
+
+    @include mobile {
+        padding: 0px 12px 32px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 300px;
+        background: var(--color-black);
+    }
+
+    .projects {
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+
+            @include mobile {
+                flex-direction: column;
+                justify-content: center;
+                gap: 16px;
+                text-align: center;
+            }
+    
+            &-img {
+                flex: 0 0 230px;
+                aspect-ratio: 1 / 1;
+                object-fit: contain;
+                object-position: center;
+
+                @include mobile {
+                    flex: 0 0 124px;
+                    width: 124px;
+                }
+            }
+    
+            .title {
+                color: var(--color-white);
+
+                @include mobile {
+                    text-wrap: balance;
+                }
+            }
+        }
+    
+        &-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 16px;
+
+            @include tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 8px;
+                padding: 32px 0px 0px;
+            }
+        }
+    
+        &-item {
+            aspect-ratio: 1 / 1;
+            padding: 24px 32px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            position: relative;
+            overflow: hidden;
+
+            @include mobile {
+                padding: 24px;
+                gap: 16px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 72px;
+                background: var(--color-lightbg);
+            }
+
+            &:hover {
+                &::before {
+                    background: var(--color-light);
+                }
+            }
+
+            &-img {
+                width: 144px;
+                flex: 0 0 144px;
+                aspect-ratio: 1 / 1;
+                background: #d9d9d9;
+                border-radius: 50%;
+                margin: 0px auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+
+                @include pre-mob {
+                    width: 100px;
+                    flex: 0 0 100px;
+                }
+
+                @include mobile {
+                    width: 80px;
+                    flex: 0 0 80px;
+                }
+
+                &:has(img) {
+                    background: #fff;
+                }
+
+                img {
+                    margin: auto;
+                    width: 50%;
+                    aspect-ratio: 1 / 1;
+                    object-position: center;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}

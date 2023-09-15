@@ -11,4 +11,17 @@
         height: 30px;
         background-image: url('../img/logo-mob.svg');
     }
+
+    &-pinid {
+        width: 125px;
+        height: 36px;
+        background-image: url('../img/pinid-logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center left;
+
+        @include mobile {
+            width: 100px;
+        }
+    }
 }
