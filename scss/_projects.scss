@@ -1,6 +1,6 @@
 main.projects {
     position: relative;
-    padding: 0px calc((100% - 1400px) / 2) 64px;
+    padding: 0px calc((100% - (1400px - (64px * 2))) / 2) 64px;
     max-height: max-content;
 
     @media (width < 1400px) {

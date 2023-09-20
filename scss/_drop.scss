@@ -31,7 +31,7 @@
     &.delete {
         .drop {
             &-button {
-                font-size: 26px;
+                font-size: 18px;
                 color: var(--color-gray);
             }
 
@@ -39,7 +39,6 @@
                 
                 position: absolute;
                 top: 0;
-                left: 0;
                 right: 0;
                 transform: translate(0, calc(100% + 32px));
             }

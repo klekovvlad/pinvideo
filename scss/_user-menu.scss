@@ -16,7 +16,7 @@
 
     &-curent {
         color: var(--color-gray);
-        font-size: 26px;
+        font-size: 18px;
         line-height: 1;
         font-weight: 300;
         cursor: pointer;
@@ -41,7 +41,7 @@
 
     &-menu {
         position: absolute;
-        right: 64px;
+        right: calc((100vw - (1400px - (64px * 2))) / 2);
         bottom: 0;
         background: var(--color-white);
         border-radius: 32px;
@@ -81,10 +81,10 @@
 
         &::before {
             content: '';
-            width: 60px;
-            height: 50px;
+            width: 50px;
+            height: 40px;
             background: var(--color-white) url('../img/icons/user-icon.svg') no-repeat center left;
-            background-size: 50px 50px;
+            background-size: 40px 40px;
             display: inline-block;
             grid-row-start: span 2;
             margin-right: 10px;
@@ -102,7 +102,7 @@
 
         &__active {
             .user-name {
-                font-size: 30px;
+                font-size: 20px;
                 color: var(--color-black);
 
                 @include pre-mob {
@@ -111,9 +111,9 @@
             }
 
             &::before {
-                width: 63px;
-                height: 73px;
-                background-size: 63px 63px;
+                width: 50px;
+                height: 60px;
+                background-size: 50px 50px;
 
                 @include pre-mob {
                     width: 50px;

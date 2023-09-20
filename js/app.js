@@ -7,6 +7,7 @@ import { Hint } from "./modules/hint.js";
 import { Input, InputsNumbers, inputDrop } from "./modules/inputs.js";
 import { Popup } from "./modules/popup.js";
 import { Tab } from "./modules/tabs.js";
+import { tariffPage } from "./modules/tariffPage.js";
 import { userMenu } from "./modules/userMenu.js";
 
 userMenu.listener();
@@ -27,7 +28,6 @@ document.querySelectorAll('.accordion').forEach(accodrion => {
 const FilterElement = new Fitlers(document.querySelector('.filters'))
 if(FilterElement) {
     FilterElement.init();
-    FilterElement.renderTableList();
 }
 
 const CamerasElements = new Cameras(document.querySelector('.cameras'))
@@ -60,3 +60,5 @@ if(inputs.length > 0) {
         inputEl.init();
     })
 }
+
+tariffPage()

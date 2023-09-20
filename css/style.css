@@ -65,7 +65,7 @@ li {
   --color-border: #A59C9C;
   --color-green: #77DFC4;
   --color-disabled: #8E8E8E;
-  --font-base: 18px;
+  --font-base: 16px;
   --font-button: 16px;
   --aspect-ratio: 8 / 5;
 }
@@ -120,8 +120,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: calc(100vh - 101px);
-  max-height: calc(100vh - 101px);
+  min-height: calc(100vh - 83px);
   overflow: hidden;
 }
 @media (max-width: 968px) {
@@ -134,8 +133,13 @@ main {
 }
 main:not(.login) {
   background: var(--color-lightbg);
-  padding: 16px 64px;
+  padding: 16px calc((100dvw - 1272px) / 2);
   grid-gap: 16px;
+}
+@media (max-width: 1400px) {
+  main:not(.login) {
+    padding: 16px 64px;
+  }
 }
 @media (max-width: 968px) {
   main:not(.login) {
@@ -148,14 +152,6 @@ main.tariffpage, main.camera-editpage {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
-}
-main.view {
-  padding: 16px 64px 64px;
-}
-@media (max-width: 968px) {
-  main.view {
-    padding: 12px;
-  }
 }
 main.profile {
   padding: 16px calc((100% - 1056px) / 2);
@@ -172,6 +168,9 @@ main.profile {
   main.profile {
     padding: 12px;
   }
+}
+main.cameraspage {
+  max-height: calc(100dvh - 83px);
 }
 
 .logo {
@@ -204,7 +203,7 @@ main.profile {
 }
 
 .header {
-  padding: 25px 64px;
+  padding: 16px calc((100dvw - 1272px) / 2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,6 +218,11 @@ main.profile {
   border-bottom: 1px solid var(--color-border);
   z-index: 10;
   background: #fff;
+}
+@media (width < 1400px) {
+  .header {
+    padding: 16px 64px;
+  }
 }
 @media (max-width: 968px) {
   .header {
@@ -249,7 +253,7 @@ main.profile {
   }
 }
 .header-nav-link {
-  font-size: 26px;
+  font-size: 18px;
   text-decoration: underline;
   text-decoration-color: var(--color-redbright);
   -webkit-text-decoration-skip-ink: none;
@@ -269,7 +273,7 @@ main.profile {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;
   color: var(--color-red);
@@ -386,7 +390,7 @@ main.profile {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 400;
 }
 @media (max-width: 767px) {
@@ -396,7 +400,7 @@ main.profile {
 }
 
 .subtitle {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 300;
 }
 @media (max-width: 767px) {
@@ -414,17 +418,12 @@ main.profile {
 }
 
 .small {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-gray);
-}
-@media (max-width: 767px) {
-  .small {
-    font-size: 14px;
-  }
 }
 
 .for-payment {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--color-black);
 }
@@ -435,7 +434,7 @@ main.profile {
 }
 
 .balance {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--color-blue);
 }
@@ -495,7 +494,7 @@ main.profile {
 
 .price {
   font-weight: 300;
-  font-size: 26px;
+  font-size: 20px;
 }
 @media (max-width: 767px) {
   .price {
@@ -567,9 +566,8 @@ main.profile {
 }
 @media (max-width: 767px) {
   .input-wrapper .input-label {
-    overflow-wrap: break-word;
-    word-break: break-all;
-    white-space: pre-wrap;
+    text-wrap: balance;
+    text-align: left;
   }
 }
 .input-wrapper .input-label .required {
@@ -935,7 +933,7 @@ main.profile {
 }
 .user-curent {
   color: var(--color-gray);
-  font-size: 26px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 300;
   cursor: pointer;
@@ -965,7 +963,7 @@ main.profile {
 }
 .user-menu {
   position: absolute;
-  right: 64px;
+  right: calc((100vw - 1272px) / 2);
   bottom: 0;
   background: var(--color-white);
   border-radius: 32px;
@@ -1020,10 +1018,10 @@ main.profile {
 }
 .user-item::before {
   content: "";
-  width: 60px;
-  height: 50px;
+  width: 50px;
+  height: 40px;
   background: var(--color-white) url("../img/icons/user-icon.svg") no-repeat center left;
-  background-size: 50px 50px;
+  background-size: 40px 40px;
   display: inline-block;
   grid-row-start: span 2;
   margin-right: 10px;
@@ -1039,7 +1037,7 @@ main.profile {
   background: var(--color-lightbg);
 }
 .user-item__active .user-name {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--color-black);
 }
 @media (max-width: 968px) {
@@ -1048,9 +1046,9 @@ main.profile {
   }
 }
 .user-item__active::before {
-  width: 63px;
-  height: 73px;
-  background-size: 63px 63px;
+  width: 50px;
+  height: 60px;
+  background-size: 50px 50px;
 }
 @media (max-width: 968px) {
   .user-item__active::before {
@@ -1182,7 +1180,7 @@ main.profile {
   padding: 8px 16px;
   color: var(--color-white);
   background: var(--color-gray);
-  font-size: 20px;
+  font-size: 14px;
   white-space: nowrap;
   z-index: 5;
   opacity: 0;
@@ -1389,13 +1387,12 @@ main.profile {
           transform: rotate(-180deg);
 }
 .drop.delete .drop-button {
-  font-size: 26px;
+  font-size: 18px;
   color: var(--color-gray);
 }
 .drop.delete .drop-content {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   -webkit-transform: translate(0, calc(100% + 32px));
           transform: translate(0, calc(100% + 32px));
@@ -1403,7 +1400,7 @@ main.profile {
 
 .accordion .accordion-label,
 .filters .accordion-label {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300;
   color: var(--color-gray);
   display: -webkit-box;
@@ -1714,8 +1711,8 @@ main.profile {
 
 .login {
   display: grid;
-  grid-template-columns: 1fr 40%;
-  grid-template-rows: auto 48px;
+  grid-template-columns: 1fr 50%;
+  grid-template-rows: 1fr auto;
   background: url("../img/loginpage-bg.png") no-repeat center left;
   background-size: cover;
 }
@@ -1729,14 +1726,19 @@ main.profile {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
-  padding: 9px 64px;
-  font-size: 26px;
+  padding: 9px calc((100dvw - 1272px) / 2);
+  font-size: 16px;
   font-weight: 300;
   grid-column-start: span 2;
   color: var(--color-white);
   background: var(--color-black);
   position: relative;
   z-index: 6;
+}
+@media (max-width: 1400px) {
+  .login .copyright {
+    padding: 9px 64px;
+  }
 }
 @media (max-width: 767px) {
   .login .copyright {
@@ -1753,9 +1755,13 @@ main.profile {
     height: 100%;
   }
 }
+.login-wrapper {
+  background: var(--color-white);
+  padding: 60px calc((100dvw - 1272px) / 2) 30px 0px;
+}
 .login-form {
   position: relative;
-  background: var(--color-white);
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1770,7 +1776,8 @@ main.profile {
       -ms-flex-pack: start;
           justify-content: start;
   gap: 32px;
-  padding: 60px calc((100% - 368px) / 2) 0px;
+  max-width: 352px;
+  margin: 0px auto;
   text-align: center;
 }
 .login-form-center {
@@ -1802,7 +1809,7 @@ main.profile {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 64px;
+  gap: 30px;
 }
 @media (max-width: 767px) {
   .login-form-buttons {
@@ -1810,7 +1817,7 @@ main.profile {
   }
 }
 .login-form-button {
-  font-size: 26px;
+  font-size: 18px;
 }
 @media (max-width: 767px) {
   .login-form-button {
@@ -2116,7 +2123,7 @@ main.profile {
   width: 100%;
 }
 .cameras-table thead tr td {
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 10px;
   border-bottom: 1px solid var(--color-border);
 }
@@ -2134,6 +2141,9 @@ main.profile {
 }
 .cameras-table tbody tr td {
   padding: 8px 10px;
+}
+.cameras-table tbody tr td:not(:first-child) {
+  color: var(--color-gray);
 }
 @media (max-width: 767px) {
   .cameras-table tbody tr td {
@@ -2240,7 +2250,7 @@ main.profile {
   }
 }
 .camera-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
 }
 @media (max-width: 767px) {
@@ -3309,7 +3319,7 @@ main.profile {
 
 main.projects {
   position: relative;
-  padding: 0px calc((100% - 1400px) / 2) 64px;
+  padding: 0px calc((100% - 1272px) / 2) 64px;
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
