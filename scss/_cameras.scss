@@ -165,7 +165,7 @@
         thead {
             tr {
                 td {
-                    font-size: 20px;
+                    font-size: 18px;
                     padding: 10px 10px;
                     border-bottom: 1px solid var(--color-border);
 
@@ -194,6 +194,10 @@
             tr {
                 td {
                     padding: 8px 10px;
+                    
+                    &:not(:first-child) {
+                        color: var(--color-gray);
+                    }
 
                     @include mobile {
                         white-space: nowrap;
@@ -296,7 +300,7 @@
     }
 
     &-name {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
 
         @include mobile {

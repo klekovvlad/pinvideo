@@ -97,7 +97,9 @@
                         <input type="text" placeholder="Выберите из списка">
                         <div class="drop-list-wrapper">
                             <ul class="drop-list">
-                                
+                                <li class="drop-item">4</li>
+                                <li class="drop-item">6</li>
+                                <li class="drop-item">20</li>
                             </ul>
                         </div>
                     </div>
@@ -105,7 +107,7 @@
 
                 <div class="input-wrapper">
                     <div class="input-label">Статус:</div>
-                    <div class="input-item input-item-drop">
+                    <div class="input-item input-item-drop input-item-options">
                         <input type="text" placeholder="Все">
                         <div class="drop-list-wrapper">
                             <ul class="drop-list">
@@ -120,7 +122,7 @@
 
                 <div class="input-wrapper">
                     <div class="input-label">Доступ к камере:</div>
-                    <div class="input-item input-item-drop">
+                    <div class="input-item input-item-drop input-item-options">
                         <input type="text" placeholder="Все">
                         <div class="drop-list-wrapper">
                             <ul class="drop-list">
@@ -357,15 +359,11 @@
         <div class="popup-body box">
             <div class="title">Добавить видеопоток</div>
 
-            <div class="input-wrapper">
-                <div class="input-label">Добавьте источник видеопотока, чтобы его проверить. Это может быть ссылка на любой видеопоток, например: rtsp://login:password@192.168.1.12/stream1</div>
-                <div class="input-item">
-                    <input type="text" placeholder="rtsp://login:password@192.168.1.12/stream1">
-                </div>
-            </div>
+            <div class="desc">Лимит бесплатного подключения 5/5</div>
+            <div class="desc">Для добавления дополнительной камеры выберите тариф</div>
 
             <div class="buttons">
-                <button class="button button-blue">Проверить</button>
+                <a href="#" class="button button-blue">Перейти к тарифам</a>
                 <button class="button button-light popup-close">Отменить</button>
             </div>
         </div>

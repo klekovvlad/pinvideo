@@ -1,7 +1,7 @@
 .login {
     display: grid;
-    grid-template-columns: 1fr 40%;
-    grid-template-rows: auto 48px;
+    grid-template-columns: 1fr 50%;
+    grid-template-rows: 1fr auto;
     background: url('../img/loginpage-bg.png') no-repeat center left;
     background-size: cover;
 
@@ -12,14 +12,18 @@
 
     .copyright {
         max-height: max-content;
-        padding: 9px 64px;
-        font-size: 26px;
+        padding: 9px calc((100dvw - (1400px - (64px * 2))) / 2);
+        font-size: 16px;
         font-weight: 300;
         grid-column-start: span 2;
         color: var(--color-white);
         background: var(--color-black);
         position: relative;
         z-index: 6;
+
+        @media (max-width: 1400px) {
+            padding: 9px 64px;
+        }
 
         @include mobile {
             grid-column-start: 1;
@@ -36,15 +40,21 @@
         }
     }
 
+    &-wrapper {
+        background: var(--color-white);
+        padding: 60px calc((100dvw - (1400px - (64px * 2))) / 2) 30px 0px;
+    }
+
     &-form {
         position: relative;
-        background: var(--color-white);
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: start;
         gap: 32px;
-        padding: 60px calc((100% - 368px) / 2) 0px;
+        max-width: 352px;
+        margin: 0px auto;
         text-align: center;
 
         &-center {
@@ -67,7 +77,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 64px;
+            gap: 30px;
 
             @include mobile {
                 gap: 16px;
@@ -75,7 +85,7 @@
         }
 
         &-button {
-            font-size: 26px;
+            font-size: 18px;
 
             @include mobile {
                 font-size: 18px;

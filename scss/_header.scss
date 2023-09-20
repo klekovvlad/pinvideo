@@ -1,5 +1,5 @@
 .header {
-    padding: 25px 64px;
+    padding: 16px calc((100dvw - (1400px - (64px * 2))) / 2);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,6 +8,10 @@
     border-bottom: 1px solid var(--color-border);
     z-index: 10;
     background: #fff;
+
+    @media(width < 1400px) {
+        padding: 16px 64px;
+    }
 
     @include pre-mob {
         padding: 6px 24px;
@@ -30,7 +34,7 @@
         }
 
         &-link {
-            font-size: 26px;
+            font-size: 18px;
             text-decoration: underline;
             text-decoration-color: var(--color-redbright);
             text-decoration-skip-ink: none;
@@ -49,7 +53,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 300;
         text-transform: uppercase;
         color: var(--color-red);

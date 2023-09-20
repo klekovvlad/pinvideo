@@ -20,10 +20,10 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 101px);
-    max-height: calc(100vh - 101px);
+    min-height: calc(100vh - 83px);
     overflow: hidden;
     
+
 
     @include pre-mob {
         min-height: calc(100dvh - 43px);
@@ -32,8 +32,12 @@ main {
 
     &:not(.login) {
         background: var(--color-lightbg);
-        padding: 16px 64px;
+        padding: 16px calc((100dvw - (1400px - (64px * 2))) / 2);
         grid-gap: 16px;
+
+        @media (max-width: 1400px) {
+            padding: 16px 64px;
+        }
 
         @include pre-mob {
             padding: 12px;
@@ -48,13 +52,13 @@ main {
         max-height: max-content;
     }
 
-    &.view {
-        padding: 16px 64px 64px;
+    // &.view {
+    //     padding: 16px 64px 64px;
 
-        @include pre-mob {
-            padding: 12px;
-        }
-    }
+    //     @include pre-mob {
+    //         padding: 12px;
+    //     }
+    // }
 
     &.profile {
         padding: 16px calc((100% - 1056px) / 2) ;
@@ -66,5 +70,9 @@ main {
         @include mobile {
             padding: 12px;
         }
+    }
+
+    &.cameraspage {
+        max-height: calc(100dvh - 83px);
     }
 }

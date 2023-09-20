@@ -31,6 +31,13 @@ export const InputsNumbers = {
         input.value = `${input.dataset.pre ? input.dataset.pre : ''}${value}`;
 
         this.changeNumberText(element, value);
+
+        if(element.parentElement.parentElement.classList.contains('input-row')) {
+            const checkbox = element.parentElement.parentElement.querySelector('.input-check input')
+            if(checkbox) {
+                checkbox.checked = true
+            }
+        }
     },
 
     changeNumberText(element, value) {

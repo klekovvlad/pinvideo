@@ -23,9 +23,8 @@
             font-weight: 300;
 
             @include mobile {
-                overflow-wrap: break-word;
-                word-break: break-all;
-                white-space: pre-wrap;
+                text-wrap: balance;
+                text-align: left;
             }
 
             .required {

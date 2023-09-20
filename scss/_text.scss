@@ -1,5 +1,5 @@
 .title {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 400;
 
     @include mobile {
@@ -8,7 +8,7 @@
 }
 
 .subtitle {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 300;
 
     @include mobile {
@@ -25,16 +25,16 @@
 }
 
 .small {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-gray);
 
-    @include mobile {
-        font-size: 14px;
-    }
+    // @include mobile {
+    //     font-size: 14px;
+    // }
 }
 
 .for-payment {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--color-black);
 
@@ -44,7 +44,7 @@
 }
 
 .balance {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--color-blue);
 
@@ -102,7 +102,7 @@
 
 .price {
     font-weight: 300;
-    font-size: 26px;
+    font-size: 20px;
 
     @include mobile {
         font-size: 20px;
